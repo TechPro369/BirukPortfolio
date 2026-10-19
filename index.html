@@ -888,7 +888,7 @@ kbd{display:inline-block;min-width:1.6rem;padding:.15rem .45rem;background:rgba(
 .slide-left.visible{opacity:1;transform:translateX(0);animation:revealLeft 1s cubic-bezier(.33,1,.68,1)}
 .slide-right{opacity:0;transform:translateX(96px)}
 .slide-right.visible{opacity:1;transform:translateX(0);animation:revealRight 1s cubic-bezier(.33,1,.68,1)}@keyframes revealLeft{0%{opacity:0;transform:translateX(-96px)}100%{opacity:1;transform:translateX(0)}}@keyframes revealRight{0%{opacity:0;transform:translateX(96px)}100%{opacity:1;transform:translateX(0)}}
-@media(max-width:768px){.slide-left,.slide-right{transform:translateY(34px)}.slide-left.visible,.slide-right.visible{transform:translateY(0);animation:revealUp .75s cubic-bezier(.33,1,.68,1)}@keyframes revealUp{0%{opacity:0;transform:translateY(34px)}100%{opacity:1;transform:translateY(0)}}}
+@media(max-width:768px){.slide-left,.slide-right{transform:none;opacity:0}.slide-left.visible,.slide-right.visible{opacity:1;transform:none;animation:revealFade .7s ease}@keyframes revealFade{0%{opacity:0}100%{opacity:1}}}
 
 /* ═══ Terminal Easter Egg ═══ */
 .ee-terminal{position:fixed;left:0;right:0;z-index:9999;background:#000;display:none;flex-direction:column;opacity:0;transition:opacity .4s ease;overflow:hidden;top:0;bottom:0;height:100%;width:100%;max-width:100vw}
