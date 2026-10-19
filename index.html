@@ -219,9 +219,9 @@ html.menu-open,html.menu-open body{overflow:hidden!important;height:100%!importa
 @media(prefers-reduced-motion:reduce){.tl-dot{transform:scale(1);transition:none}@media(min-width:769px){.tl-dot{transform:translateX(-50%) scale(1)}}}
 .tl-dot::after{content:'';position:absolute;inset:.2rem;border-radius:50%;background:#34d399}
 .tl-card{--accent:#34d399;margin-left:3rem;width:calc(100% - 3rem);padding:1.2rem 1.25rem 1.1rem;position:relative;overflow:hidden;transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;z-index:0;border-radius:1.1rem}
-.tl-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),#6ee7b7,var(--accent));opacity:.85;transition:opacity .3s ease;pointer-events:none;z-index:2;width:auto}
+.tl-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),#6ee7b7,var(--accent));opacity:0;transition:opacity .3s ease;pointer-events:none;z-index:2;width:auto}
 .tl-card::after{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(ellipse at 50% 0%,color-mix(in srgb,var(--accent) 10%,transparent),transparent 60%);opacity:0;transition:opacity .4s ease;pointer-events:none;z-index:0}
-@media(hover:hover){.tl-card:hover{border-color:rgba(120,120,128,.5);box-shadow:0 12px 26px -14px rgba(0,0,0,.5);z-index:5;outline:0}.tl-card:hover::before{opacity:1}.tl-card:hover::after{opacity:0}}
+@media(hover:hover){.tl-card.glass-card:hover{transform:translateY(-6px);border-color:rgba(120,120,128,.5);box-shadow:0 14px 30px -14px rgba(0,0,0,.5);z-index:5;outline:0}.tl-card:hover::before{opacity:1}.tl-card:hover::after{opacity:0}}
 @media(min-width:769px){.tl-item:has(.slide-left) .tl-card{margin-left:0;margin-right:calc(50% + 2rem);width:calc(50% - 2rem)}.tl-item:has(.slide-right) .tl-card{margin-left:calc(50% + 2rem);width:calc(50% - 2rem)}}
 .tl-head{display:flex;align-items:flex-start;justify-content:space-between;gap:.7rem;margin-bottom:.7rem;position:relative;z-index:1}
 .tl-titles{flex:1;min-width:0}
