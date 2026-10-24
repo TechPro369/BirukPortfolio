@@ -955,6 +955,38 @@ kbd{display:inline-block;min-width:1.6rem;padding:.15rem .45rem;background:rgba(
 .lang-switch .lang-icon{width:1rem;height:1rem}
 .lang-switch .lang-label{font-weight:600}
 .mobile-menu .lang-switch{width:100%;justify-content:center;margin-top:.5rem;padding:.6rem;border-radius:.5rem}
+/* ═══ Mobile menu v2 ═══ */
+.mobile-menu{background:#0a0a0e;backdrop-filter:none;-webkit-tap-highlight-color:transparent;justify-content:space-between;gap:1.5rem;padding:4.75rem 1.5rem 1.5rem}
+.mobile-menu .mm-links{display:flex;flex-direction:column;gap:.35rem;counter-reset:mm}
+.mobile-menu .mm-links a{counter-increment:mm;display:flex;align-items:baseline;gap:.85rem;font-size:1.3rem;font-weight:600;color:var(--text-gray-300);padding:.55rem .25rem;border-bottom:1px solid rgba(255,255,255,.06);background:none!important;outline:none;-webkit-tap-highlight-color:transparent}
+.mobile-menu .mm-links a::before{content:counter(mm,decimal-leading-zero);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.75rem;font-weight:500;color:var(--purple-400);opacity:.75;min-width:1.25rem}
+.mobile-menu .mm-links a:active,.mobile-menu .mm-links a:focus{background:none!important;color:var(--text-white)}
+.mobile-menu .mm-links a:focus-visible{outline:2px solid var(--purple-border-hover);outline-offset:2px;border-radius:.25rem}
+.mobile-menu .mm-links a.is-active{color:var(--purple-400);padding-left:.6rem}
+.mobile-menu .mm-links a.is-active::before{opacity:1}
+.mobile-menu .mm-foot{display:flex;flex-direction:column;gap:1rem}
+.mobile-menu .mm-ctas{display:grid;grid-template-columns:1fr auto;gap:.6rem;align-items:stretch}
+.mobile-menu a.mm-cta{display:flex;align-items:center;justify-content:center;text-align:center;padding:.75rem .5rem;border-radius:999px;font-size:.88rem;font-weight:600;color:var(--purple-400);border:1px solid var(--purple-border-hover);text-decoration:none;-webkit-tap-highlight-color:transparent}
+.mobile-menu a.mm-cta-primary{background:var(--purple-500);border-color:var(--purple-500);color:#04130d}
+.mobile-menu .mm-socials{display:flex;justify-content:center;gap:1.1rem}
+.mobile-menu a.mm-social{width:2.6rem;height:2.6rem;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(255,255,255,.1);color:var(--text-gray-300);padding:0;font-size:1rem}
+.mobile-menu a.mm-social .ic{width:1.1rem;height:1.1rem}
+.mobile-menu a.mm-social .ic{width:1.25rem;height:1.25rem}.mobile-menu a.mm-social.linkedin{color:#0A66C2}.mobile-menu a.mm-social.github,.mobile-menu a.mm-social.x-twitter{color:#e6edf3}.mobile-menu a.mm-social.instagram{color:#E1306C}.mobile-menu a.mm-social:active{border-color:rgba(255,255,255,.3);transform:scale(.94)}
+.mobile-menu .lang-switch{margin-top:0;width:auto;padding:.75rem 1.1rem;border-radius:999px;gap:.4rem;border:1px solid rgba(52,211,153,.45)!important;color:var(--text-gray-200)}
+html.menu-open .nav-brand{position:relative;z-index:170}
+.mobile-menu .mm-links a,.mobile-menu .mm-foot{opacity:0;transform:translateX(-14px);transition:opacity .35s ease,transform .35s ease,color .2s ease,padding-left .25s ease}
+.mobile-menu.open .mm-links a,.mobile-menu.open .mm-foot{opacity:1;transform:none}
+.mobile-menu.open .mm-links a:nth-child(1){transition-delay:0.12s}
+.mobile-menu.open .mm-links a:nth-child(2){transition-delay:0.16s}
+.mobile-menu.open .mm-links a:nth-child(3){transition-delay:0.20s}
+.mobile-menu.open .mm-links a:nth-child(4){transition-delay:0.24s}
+.mobile-menu.open .mm-links a:nth-child(5){transition-delay:0.28s}
+.mobile-menu.open .mm-links a:nth-child(6){transition-delay:0.32s}
+.mobile-menu.open .mm-links a:nth-child(7){transition-delay:0.36s}
+.mobile-menu.open .mm-links a:nth-child(8){transition-delay:0.40s}
+.mobile-menu.open .mm-foot{transition-delay:.45s}
+@media(prefers-reduced-motion:reduce){.mobile-menu .mm-links a,.mobile-menu .mm-foot{transition:none;opacity:1;transform:none}}
+
 .back-top .ic{width:1.1rem;height:1.1rem}
 @media(max-width:768px){.back-top{bottom:1rem;right:1rem;width:2.2rem;height:2.2rem}.back-top .ic{width:1rem;height:1rem}}
 /* Slide-in animations */
@@ -1094,7 +1126,7 @@ kbd{display:inline-block;min-width:1.6rem;padding:.15rem .45rem;background:rgba(
   <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
 </svg>
 
-<nav class="navbar" id="navbar"><div class="nav-inner"><a href="#" class="nav-brand"><span class="bracket">&lt;/</span><span class="name" data-i18n="brand-name">Biruk Aregu</span><span class="bracket">&gt;</span></a><div class="nav-links"><a href="#about" data-i18n="nav-about">About</a><a href="#work" data-i18n="nav-work">Work</a><a href="#projects" data-i18n="nav-projects">Projects</a><a href="#certifications" data-i18n="nav-cert">Certifications</a><a href="#skills" data-i18n="nav-skills">Skills</a><a href="#education" data-i18n="nav-edu">Education</a><a href="#testimonials" data-i18n="nav-test">Testimonials</a><a href="#contact" data-i18n="nav-contact">Contact</a><button class="lang-switch" id="langToggle" aria-label="Switch language" onclick="toggleLang()"><svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span class="lang-label" id="langLabel">አማ</span></button></div><button class="mobile-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button></div><div class="mobile-menu" id="mobileMenu"><a href="#about" data-i18n="nav-about">About</a><a href="#work" data-i18n="nav-work">Work</a><a href="#projects" data-i18n="nav-projects">Projects</a><a href="#certifications" data-i18n="nav-cert">Certifications</a><a href="#skills" data-i18n="nav-skills">Skills</a><a href="#education" data-i18n="nav-edu">Education</a><a href="#testimonials" data-i18n="nav-test">Testimonials</a><a href="#contact" data-i18n="nav-contact">Contact</a><button class="lang-switch" aria-label="Switch language" onclick="toggleLang()"><svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span class="lang-label">አማ</span></button></div><div class="mobile-overlay" id="mobileOverlay"></div></nav>
+<nav class="navbar" id="navbar"><div class="nav-inner"><a href="#" class="nav-brand"><span class="bracket">&lt;/</span><span class="name" data-i18n="brand-name">Biruk Aregu</span><span class="bracket">&gt;</span></a><div class="nav-links"><a href="#about" data-i18n="nav-about">About</a><a href="#work" data-i18n="nav-work">Work</a><a href="#projects" data-i18n="nav-projects">Projects</a><a href="#certifications" data-i18n="nav-cert">Certifications</a><a href="#skills" data-i18n="nav-skills">Skills</a><a href="#education" data-i18n="nav-edu">Education</a><a href="#testimonials" data-i18n="nav-test">Testimonials</a><a href="#contact" data-i18n="nav-contact">Contact</a><button class="lang-switch" id="langToggle" aria-label="Switch language" onclick="toggleLang()"><svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span class="lang-label" id="langLabel">አማ</span></button></div><button class="mobile-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button></div><div class="mobile-menu" id="mobileMenu"><div class="mm-links"><a href="#about" data-i18n="nav-about">About</a><a href="#work" data-i18n="nav-work">Work</a><a href="#projects" data-i18n="nav-projects">Projects</a><a href="#certifications" data-i18n="nav-cert">Certifications</a><a href="#skills" data-i18n="nav-skills">Skills</a><a href="#education" data-i18n="nav-edu">Education</a><a href="#testimonials" data-i18n="nav-test">Testimonials</a><a href="#contact" data-i18n="nav-contact">Contact</a></div><div class="mm-foot"><div class="mm-socials"><a href="https://www.linkedin.com/in/biruk-aregu" target="_blank" rel="noopener" class="mm-social linkedin" title="LinkedIn" aria-label="LinkedIn"><svg class="ic"><use href="#i-linkedin"/></svg></a><a href="https://github.com/TechPro369" target="_blank" rel="noopener" class="mm-social github" title="GitHub" aria-label="GitHub"><svg class="ic"><use href="#i-github"/></svg></a><a href="https://x.com/" target="_blank" rel="noopener" class="mm-social x-twitter" title="X" aria-label="X Twitter"><svg class="ic"><use href="#i-x"/></svg></a><a href="https://instagram.com/" target="_blank" rel="noopener" class="mm-social instagram" title="Instagram" aria-label="Instagram"><svg class="ic"><use href="#i-instagram"/></svg></a></div><div class="mm-ctas"><a href="#" class="mm-cta mm-cta-primary" data-i18n="hero-resume" onclick="document.getElementById('resumeOverlay').classList.add('open');setTimeout(function(){document.body.style.overflow='hidden'},0);return false">View Resume</a><button class="lang-switch" aria-label="Switch language" onclick="toggleLang()"><svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span class="lang-label">አማ</span></button></div></div></div><div class="mobile-overlay" id="mobileOverlay"></div></nav>
 
 <section class="hero" id="hero"><canvas id="waveCanvas" aria-hidden="true"></canvas><div class="hero-content"><div class="hero-accent"><div class="bar"></div><h1><span data-i18n="hero-hi">Hi, I'm</span> <span class="purple" data-i18n="hero-name">Biruk</span> <span data-i18n="hero-neny"></span><span class="wave-emoji">👋</span></h1></div><div class="hero-sub"><p class="hero-role"><span data-i18n="hero-im">I'm</span> <span class="typed" id="typedText"></span><span class="cursor">|</span></p><div class="hero-badges"><span class="hero-badge"><svg class="ic"><use href="#i-award"/></svg>Security+</span><span class="hero-badge"><svg class="ic"><use href="#i-cloud"/></svg>AWS SAA</span><span class="hero-badge hero-badge-key"><svg class="ic"><use href="#i-lock"/></svg>Active DoD Secret Clearance</span></div><p class="hero-welcome" data-i18n="hero-welcome">Cybersecurity · Cloud · AI — passionate about tech and problem-solving.</p><div class="hero-actions"><a href="#contact" class="hero-btn hero-btn-primary" data-i18n="hero-connect">Let's Connect</a><a href="#" onclick="document.getElementById('resumeOverlay').classList.add('open');document.body.style.overflow='hidden';return false" class="hero-btn hero-btn-outline" data-i18n="hero-resume">View Resume</a></div><div class="hero-socials"><a href="https://www.linkedin.com/in/biruk-aregu" target="_blank" rel="noopener" class="hero-social-link linkedin" title="LinkedIn" aria-label="LinkedIn"><svg class="ic"><use href="#i-linkedin"/></svg></a><a href="https://github.com/TechPro369" target="_blank" rel="noopener" class="hero-social-link github" title="GitHub" aria-label="GitHub"><svg class="ic"><use href="#i-github"/></svg></a><a href="https://x.com/" target="_blank" rel="noopener" class="hero-social-link x-twitter" title="X" aria-label="X Twitter"><svg class="ic"><use href="#i-x"/></svg></a><a href="https://instagram.com/" target="_blank" rel="noopener" class="hero-social-link instagram" title="Instagram" aria-label="Instagram"><svg class="ic"><use href="#i-instagram"/></svg></a></div></div></div><div class="desk-scene-wrap" id="deskScene"><div class="desk-loader" id="deskLoader"><div class="desk-loader-label">Loading</div><div class="desk-loader-pct" id="deskLoaderPct">0%</div><div class="desk-loader-bar"><div class="desk-loader-fill" id="deskLoaderFill"></div></div></div></div></section>
 
@@ -4413,9 +4445,21 @@ window.addEventListener('resize',function(){
 });
 })();
 var mt=document.getElementById('menuToggle'),mm=document.getElementById('mobileMenu'),mo=document.getElementById('mobileOverlay');
-function closeMenu(){mm.classList.remove('open');mt.classList.remove('open');mo.classList.remove('open');document.documentElement.classList.remove('menu-open')}
+function closeMenu(){if(document.activeElement&&mm.contains(document.activeElement))document.activeElement.blur();mm.classList.remove('open');mt.classList.remove('open');mo.classList.remove('open');document.documentElement.classList.remove('menu-open')}
 mt.addEventListener('click',function(){var isOpen=mm.classList.toggle('open');mt.classList.toggle('open');mo.classList.toggle('open');if(isOpen){document.documentElement.classList.add('menu-open')}else{document.documentElement.classList.remove('menu-open')}});
 mo.addEventListener('click',closeMenu);
+// Mobile menu: active section + brand closes menu
+(function(){var mmLinks=Array.from(document.querySelectorAll('#mobileMenu .mm-links a'));
+var nb=document.querySelector('.nav-brand');if(nb)nb.addEventListener('click',function(){if(mm.classList.contains('open'))closeMenu()});
+if(!('IntersectionObserver' in window))return;
+var map={};mmLinks.forEach(function(a){var id=a.getAttribute('href').slice(1);if(document.getElementById(id))map[id]=a});
+function setActive(id){if(document.documentElement.classList.contains('menu-open'))return;mmLinks.forEach(function(a){a.classList.toggle('is-active',a===map[id])})}
+var opt={rootMargin:'-40% 0px -55% 0px'};
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)setActive(e.target.id)})},opt);
+Object.keys(map).forEach(function(id){io.observe(document.getElementById(id))});
+var hero=document.getElementById('hero');if(hero)new IntersectionObserver(function(es){if(es[0].isIntersecting)setActive(null)},opt).observe(hero);
+})();
+
 Array.from(mm.querySelectorAll('a')).forEach(function(a){a.addEventListener('click',closeMenu)});
 var roles=["IT Specialist","Cybersecurity Analyst","Cloud Architect","AI Enthusiast","Web Developer","Problem Solver","Critical Thinker","Computer Enthusiast"],ri=0,ci=0,del=false,te=document.getElementById('typedText');
 function aOrAn(w){if(!w)return'a ';return /^[AEIOU]/i.test(w)?'an ':'a '}
@@ -4699,8 +4743,6 @@ var rmBtn=document.getElementById('readMoreBtn');
 if(rmBtn){var isOpen=document.getElementById('aboutExpanded').classList.contains('show');rmBtn.querySelector('.rm-text').textContent=currentLang==='am'?(isOpen?'ያነሰ ያንብቡ':'ተጨማሪ ያንብቡ'):(isOpen?'Read Less':'Read More');}
 // reCAPTCHA language
 var rcWrap=document.querySelector('.captcha-row');if(rcWrap&&document.querySelector('script[src*="recaptcha/api"]')){var oldDiv=rcWrap.querySelector('.g-recaptcha');if(oldDiv){var newDiv=document.createElement('div');newDiv.className='g-recaptcha';newDiv.setAttribute('data-sitekey','6LdaBmcsAAAAAHwi2dy34Y6IPOmxs6jwyy2a9__B');newDiv.setAttribute('data-theme','dark');oldDiv.replaceWith(newDiv);var oldScript=document.querySelector('script[src*="recaptcha/api"]');if(oldScript)oldScript.remove();var ns=document.createElement('script');ns.src='https://www.google.com/recaptcha/api.js?hl='+(currentLang==='am'?'am':'en');document.head.appendChild(ns);}}
-// Close mobile menu if open
-mm.classList.remove('open');mt.classList.remove('open');
 // Update impact numbers to current numeral system
 document.querySelectorAll('.impact-num').forEach(function(el){
 var target=parseInt(el.getAttribute('data-target'));
