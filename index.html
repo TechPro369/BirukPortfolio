@@ -14,20 +14,22 @@
 <meta property="og:url" content="https://www.birukaregu.com/">
 <meta property="og:title" content="Biruk Aregu — IT Professional | Cybersecurity, Cloud & AI Enthusiast">
 <meta property="og:description" content="IT Specialist specializing in Cybersecurity, Cloud Solutions, and IT Support. Security+ and AWS SAA Certified. Explore my projects, skills, and experience.">
-<meta property="og:image" content="https://www.birukaregu.com/og-preview.png">
+<meta property="og:image" content="https://www.birukaregu.com/og-preview.png?v=2">
 <meta property="og:site_name" content="Biruk Aregu Portfolio">
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Biruk Aregu — IT Professional | Cybersecurity, Cloud & AI Enthusiast">
 <meta name="twitter:description" content="IT Specialist specializing in Cybersecurity, Cloud Solutions, and IT Support. Security+ and AWS SAA Certified.">
-<meta name="twitter:image" content="https://www.birukaregu.com/og-preview.png">
+<meta name="twitter:image" content="https://www.birukaregu.com/og-preview.png?v=2">
 <!-- Theme Color -->
 <meta name="theme-color" content="#0a0a0f">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap"></noscript>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -66,7 +68,10 @@ html.menu-open .navbar.scrolled{border-bottom-color:transparent}
 .nav-links{display:flex;gap:2rem;align-items:center}
 .nav-links a{font-family:'Inter',sans-serif;font-size:.95rem;color:var(--text-gray-400);transition:color .2s}
 .nav-links a:hover{color:var(--purple-400)}
-.nav-links a.active{color:var(--text-white)}
+.nav-links a{position:relative}
+.nav-links a.active{color:var(--purple-400)}
+.nav-links a::after{content:'';position:absolute;left:50%;bottom:-.45rem;width:4px;height:4px;border-radius:50%;background:var(--purple-400);transform:translateX(-50%) scale(0);transition:transform .25s ease}
+.nav-links a.active::after{transform:translateX(-50%) scale(1)}
 .mobile-toggle{display:none;color:var(--text-gray-300);font-size:2rem;font-weight:700;background:none;border:none;cursor:pointer;width:1.85rem;height:1.85rem;position:relative;padding:0;z-index:170}
 .mobile-toggle span{display:block;position:absolute;height:2.5px;width:100%;background:var(--text-gray-300);border-radius:2px;left:0;transition:transform .3s ease,opacity .3s ease,top .3s ease}
 .mobile-toggle span:nth-child(1){top:20%}
@@ -107,10 +112,10 @@ html.menu-open,html.menu-open body{overflow:hidden!important;height:100%!importa
 .hero-welcome{margin-top:.6rem;font-family:'Inter',sans-serif;font-size:clamp(1.05rem,2.2vw,1.3rem);font-weight:600;color:var(--text-gray-200);max-width:52rem}
 .hero-actions{display:flex;align-items:center;gap:1rem;margin-top:1.2rem;flex-wrap:wrap}
 .hero-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.8rem;border-radius:.5rem;font-size:.95rem;font-weight:600;text-decoration:none;transition:all .3s ease;font-family:'Inter',sans-serif;cursor:pointer;border:none}
-.hero-btn-primary{background:var(--purple-500);color:#fff;box-shadow:0 4px 20px rgba(16,185,129,.3)}
+.hero-btn-primary{background:var(--purple-500);color:#04130d;box-shadow:0 4px 20px rgba(16,185,129,.3)}
 .hero-btn-primary:hover{background:var(--purple-600);box-shadow:0 6px 30px rgba(16,185,129,.45);transform:translateY(-2px)}
-.hero-btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6)}
-.hero-btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.08);transform:translateY(-2px)}
+.hero-btn-outline{background:transparent;color:#fff;border:2px solid rgba(52,211,153,.55)}
+.hero-btn-outline:hover{border-color:var(--purple-400);background:rgba(52,211,153,.08);transform:translateY(-2px)}
 .hero-socials{display:flex;align-items:center;gap:.8rem;margin-top:.8rem}
 .hero-social-link{width:2.4rem;height:2.4rem;display:flex;align-items:center;justify-content:center;color:var(--text-gray-400);transition:all .3s;text-decoration:none}
 .hero-social-link:hover{transform:translateY(-2px)}
@@ -578,7 +583,7 @@ html.lenis,html.lenis body{height:auto}
 .contact-social-icon.cs-github{color:#e6edf3}
 .contact-social-icon.cs-github:hover{color:#fff}
 .contact-compact-row{display:flex;align-items:center;gap:1rem}
-.contact-compact-info h4{font-size:.95rem;font-weight:700;color:var(--text-white);margin-bottom:.15rem}
+.contact-compact-info h3,.contact-compact-info h4{font-size:.95rem;font-weight:700;color:var(--text-white);margin-bottom:.15rem}
 .contact-compact-info p{font-size:.85rem;color:var(--text-gray-300)}
 .schedule-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem;border-radius:.5rem;background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.25);color:var(--purple-400);font-size:.9rem;font-weight:600;cursor:pointer;transition:background .3s,border-color .3s,box-shadow .3s;font-family:inherit;text-decoration:none}
 .schedule-btn:hover{background:rgba(52,211,153,.15);border-color:rgba(52,211,153,.5);box-shadow:0 0 20px rgba(16,185,129,.12)}
@@ -1076,7 +1081,7 @@ html.menu-open .nav-brand{position:relative;z-index:170}
   "@type":"Person",
   "name":"Biruk Aregu",
   "url":"https://www.birukaregu.com",
-  "image":"https://www.birukaregu.com/og-preview.png",
+  "image":"https://www.birukaregu.com/og-preview.png?v=2",
   "jobTitle":"IT Specialist",
   "worksFor":{"@type":"Organization","name":"Independence Blue Cross"},
   "alumniOf":[
@@ -1143,6 +1148,7 @@ html.menu-open .nav-brand{position:relative;z-index:170}
 
 <nav class="navbar" id="navbar"><div class="nav-inner"><a href="#" class="nav-brand"><span class="bracket">&lt;/</span><span class="name" data-i18n="brand-name">Biruk Aregu</span><span class="bracket">&gt;</span></a><div class="nav-links"><a href="#about" data-i18n="nav-about">About</a><a href="#work" data-i18n="nav-work">Work</a><a href="#projects" data-i18n="nav-projects">Projects</a><a href="#certifications" data-i18n="nav-cert">Certifications</a><a href="#skills" data-i18n="nav-skills">Skills</a><a href="#education" data-i18n="nav-edu">Education</a><a href="#testimonials" data-i18n="nav-test">Testimonials</a><a href="#contact" data-i18n="nav-contact">Contact</a><button class="lang-switch" id="langToggle" aria-label="Switch language" onclick="toggleLang()"><svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span class="lang-label" id="langLabel">አማ</span></button></div><button class="mobile-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button></div><div class="mobile-menu" id="mobileMenu"><div class="mm-links"><a href="#about" data-i18n="nav-about">About</a><a href="#work" data-i18n="nav-work">Work</a><a href="#projects" data-i18n="nav-projects">Projects</a><a href="#certifications" data-i18n="nav-cert">Certifications</a><a href="#skills" data-i18n="nav-skills">Skills</a><a href="#education" data-i18n="nav-edu">Education</a><a href="#testimonials" data-i18n="nav-test">Testimonials</a><a href="#contact" data-i18n="nav-contact">Contact</a></div><div class="mm-foot"><div class="mm-socials"><a href="https://www.linkedin.com/in/biruk-aregu" target="_blank" rel="noopener" class="mm-social linkedin" title="LinkedIn" aria-label="LinkedIn"><svg class="ic"><use href="#i-linkedin"/></svg></a><a href="https://github.com/TechPro369" target="_blank" rel="noopener" class="mm-social github" title="GitHub" aria-label="GitHub"><svg class="ic"><use href="#i-github"/></svg></a><a href="https://x.com/" target="_blank" rel="noopener" class="mm-social x-twitter" title="X" aria-label="X Twitter"><svg class="ic"><use href="#i-x"/></svg></a><a href="https://instagram.com/" target="_blank" rel="noopener" class="mm-social instagram" title="Instagram" aria-label="Instagram"><svg class="ic"><use href="#i-instagram"/></svg></a></div><div class="mm-ctas"><a href="#" class="mm-cta mm-cta-primary" data-i18n="hero-resume" onclick="document.getElementById('resumeOverlay').classList.add('open');setTimeout(function(){document.body.style.overflow='hidden'},0);return false">View Resume</a><button class="lang-switch" aria-label="Switch language" onclick="toggleLang()"><svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span class="lang-label">አማ</span></button></div></div></div><div class="mobile-overlay" id="mobileOverlay"></div></nav>
 
+<main id="main">
 <section class="hero" id="hero"><canvas id="waveCanvas" aria-hidden="true"></canvas><div class="hero-content"><div class="hero-accent"><div class="bar"></div><h1><span data-i18n="hero-hi">Hi, I'm</span> <span class="purple" data-i18n="hero-name">Biruk</span> <span data-i18n="hero-neny"></span><span class="wave-emoji">👋</span></h1></div><div class="hero-sub"><p class="hero-role"><span data-i18n="hero-im">I'm</span> <span class="typed" id="typedText"></span><span class="cursor">|</span></p><div class="hero-badges"><span class="hero-badge"><svg class="ic"><use href="#i-award"/></svg>Security+</span><span class="hero-badge"><svg class="ic"><use href="#i-cloud"/></svg>AWS SAA</span><span class="hero-badge hero-badge-key"><svg class="ic"><use href="#i-lock"/></svg>Active DoD Secret Clearance</span></div><p class="hero-welcome" data-i18n="hero-welcome">Cybersecurity · Cloud · AI — passionate about tech and problem-solving.</p><div class="hero-actions"><a href="#contact" class="hero-btn hero-btn-primary" data-i18n="hero-connect">Let's Connect</a><a href="#" onclick="document.getElementById('resumeOverlay').classList.add('open');document.body.style.overflow='hidden';return false" class="hero-btn hero-btn-outline" data-i18n="hero-resume">View Resume</a></div><div class="hero-socials"><a href="https://www.linkedin.com/in/biruk-aregu" target="_blank" rel="noopener" class="hero-social-link linkedin" title="LinkedIn" aria-label="LinkedIn"><svg class="ic"><use href="#i-linkedin"/></svg></a><a href="https://github.com/TechPro369" target="_blank" rel="noopener" class="hero-social-link github" title="GitHub" aria-label="GitHub"><svg class="ic"><use href="#i-github"/></svg></a><a href="https://x.com/" target="_blank" rel="noopener" class="hero-social-link x-twitter" title="X" aria-label="X Twitter"><svg class="ic"><use href="#i-x"/></svg></a><a href="https://instagram.com/" target="_blank" rel="noopener" class="hero-social-link instagram" title="Instagram" aria-label="Instagram"><svg class="ic"><use href="#i-instagram"/></svg></a></div></div></div><div class="desk-scene-wrap" id="deskScene"><div class="desk-loader" id="deskLoader"><div class="desk-loader-label">Loading</div><div class="desk-loader-pct" id="deskLoaderPct">0%</div><div class="desk-loader-bar"><div class="desk-loader-fill" id="deskLoaderFill"></div></div></div></div></section>
 
 <!-- ABOUT -->
@@ -1350,11 +1356,11 @@ html.menu-open .nav-brand{position:relative;z-index:170}
 
 <section class="section contact-bg" id="contact"><div class="contact-ripple-bg"><div class="ripple r1"></div><div class="ripple r2"></div><div class="ripple r3"></div><div class="ripple r4"></div></div><div class="section-inner"><div class="section-header"><h2 class="section-title" data-i18n="contact-title">Get In Touch</h2></div><p class="contact-text" data-i18n="contact-text">I'm always interested in hearing about new opportunities and collaborations. Feel free to reach out!</p><div class="contact-grid"><div class="contact-info-cards slide-left">
 <!-- Email Card -->
-<div class="contact-info-card glass-card card-hover fade-up"><div class="contact-card-title" data-i18n="contact-email">Email</div><div class="contact-email-row"><div class="contact-circle-icon"><svg class="ic"><use href="#i-mail"/></svg></div><span class="contact-email-text"><a href="mailto:aregubq@gmail.com">aregubq@gmail.com</a></span><button class="copy-btn" onclick="(function(btn){var t=document.createElement('textarea');t.value='aregubq@gmail.com';t.style.position='fixed';t.style.left='-9999px';document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(t);if(navigator.clipboard)navigator.clipboard.writeText('aregubq@gmail.com');btn.innerHTML='<svg class=\'ic\' style=\'color:var(--purple-400)\'><use href=\'#i-check\'/></svg>';setTimeout(function(){btn.innerHTML='<svg class=\'ic\'><use href=\'#i-copy\'/></svg>'},1500)})(this)" title="Copy email"><svg class="ic"><use href="#i-copy"/></svg></button></div><div class="contact-socials"><a href="https://www.linkedin.com/in/biruk-aregu" target="_blank" rel="noopener" class="contact-social-icon cs-linkedin"><svg class="ic"><use href="#i-linkedin"/></svg></a><a href="https://github.com/TechPro369" target="_blank" rel="noopener" class="contact-social-icon cs-github"><svg class="ic"><use href="#i-github"/></svg></a></div></div>
+<div class="contact-info-card glass-card card-hover fade-up"><div class="contact-card-title" data-i18n="contact-email">Email</div><div class="contact-email-row"><div class="contact-circle-icon"><svg class="ic"><use href="#i-mail"/></svg></div><span class="contact-email-text"><a href="mailto:aregubq@gmail.com">aregubq@gmail.com</a></span><button class="copy-btn" onclick="(function(btn){var t=document.createElement('textarea');t.value='aregubq@gmail.com';t.style.position='fixed';t.style.left='-9999px';document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(t);if(navigator.clipboard)navigator.clipboard.writeText('aregubq@gmail.com');btn.innerHTML='<svg class=\'ic\' style=\'color:var(--purple-400)\'><use href=\'#i-check\'/></svg>';setTimeout(function(){btn.innerHTML='<svg class=\'ic\'><use href=\'#i-copy\'/></svg>'},1500)})(this)" title="Copy email"><svg class="ic"><use href="#i-copy"/></svg></button></div><div class="contact-socials"><a href="https://www.linkedin.com/in/biruk-aregu" target="_blank" rel="noopener" class="contact-social-icon cs-linkedin" aria-label="LinkedIn"><svg class="ic"><use href="#i-linkedin"/></svg></a><a href="https://github.com/TechPro369" target="_blank" rel="noopener" class="contact-social-icon cs-github" aria-label="GitHub"><svg class="ic"><use href="#i-github"/></svg></a></div></div>
 <!-- Phone Card -->
-<div class="contact-info-card glass-card card-hover fade-up"><div class="contact-compact-row"><div class="contact-circle-icon"><svg class="ic"><use href="#i-phone"/></svg></div><div class="contact-compact-info"><h4 data-i18n="contact-phone">Phone</h4><p data-i18n="contact-phone-v">Available upon request</p></div></div></div>
+<div class="contact-info-card glass-card card-hover fade-up"><div class="contact-compact-row"><div class="contact-circle-icon"><svg class="ic"><use href="#i-phone"/></svg></div><div class="contact-compact-info"><h3 data-i18n="contact-phone">Phone</h3><p data-i18n="contact-phone-v">Available upon request</p></div></div></div>
 <!-- Location Card -->
-<div class="contact-info-card glass-card card-hover fade-up"><div class="contact-compact-row"><div class="contact-circle-icon"><svg class="ic"><use href="#i-pin"/></svg></div><div class="contact-compact-info"><h4 data-i18n="contact-loc">Location</h4><p data-i18n="contact-loc-v">Philadelphia, PA</p></div></div></div>
+<div class="contact-info-card glass-card card-hover fade-up"><div class="contact-compact-row"><div class="contact-circle-icon"><svg class="ic"><use href="#i-pin"/></svg></div><div class="contact-compact-info"><h3 data-i18n="contact-loc">Location</h3><p data-i18n="contact-loc-v">Philadelphia, PA</p></div></div></div>
 <!-- Schedule Button -->
 <a href="https://calendly.com/aregubq" target="_blank" rel="noopener" class="schedule-btn fade-up"><svg class="ic"><use href="#i-cal"/></svg> <span data-i18n="contact-schedule">Schedule a Meeting</span></a>
 </div>
@@ -4394,10 +4400,11 @@ document.addEventListener('keydown', e => {
 <!-- Back to Top -->
 <button class="back-top" id="backTop" aria-label="Back to top"><svg class="ic"><use href="#i-arrowup"/></svg></button>
 
+</main>
 <footer class="footer"><div class="footer-inner"><div class="footer-brand"><span class="bracket">&lt;/</span><span class="name" data-i18n="brand-name">Biruk Aregu</span><span class="bracket">&gt;</span></div><p class="footer-copy" data-i18n="footer-built">Built with <svg class="ic"><use href="#i-heart"/></svg> by Biruk Aregu</p><div class="footer-social"><a href="https://github.com/TechPro369" target="_blank" rel="noopener" class="fs-github" aria-label="GitHub"><svg class="ic"><use href="#i-github"/></svg></a><a href="https://www.linkedin.com/in/biruk-aregu" target="_blank" rel="noopener" class="fs-linkedin" aria-label="LinkedIn"><svg class="ic"><use href="#i-linkedin"/></svg></a><a href="mailto:aregubq@gmail.com" class="fs-mail" aria-label="Email"><svg class="ic"><use href="#i-mail"/></svg></a><a href="https://instagram.com/" target="_blank" rel="noopener" class="fs-instagram" aria-label="Instagram"><svg class="ic"><use href="#i-instagram"/></svg></a></div></div></footer>
 
 <!-- Keyboard shortcut overlay -->
-<div class="kbd-overlay" id="kbdOverlay" role="dialog" aria-modal="true" aria-labelledby="kbdTitle" aria-hidden="true">
+<div class="kbd-overlay" id="kbdOverlay" role="dialog" aria-modal="true" aria-labelledby="kbdTitle" aria-hidden="true" inert>
 <div class="kbd-modal">
 <div class="kbd-header"><h3 id="kbdTitle" data-i18n="kbd-title">Keyboard Shortcuts</h3><button class="kbd-close" id="kbdClose" aria-label="Close shortcuts">✕</button></div>
 <div class="kbd-groups">
@@ -4617,7 +4624,7 @@ Array.from(document.querySelectorAll('.impact-num')).forEach(function(el){countO
 var btt=document.getElementById('backTop');
 var eeFloat=document.getElementById('eeFloatBtn');
 var navSections=['about','education','work','certifications','skills','projects','testimonials','contact'];
-function updateActiveNav(){var mid=window.scrollY+window.innerHeight/3,cur='';for(var i=0;i<navSections.length;i++){var el=document.getElementById(navSections[i]);if(el&&el.offsetTop<=mid)cur=navSections[i]}document.querySelectorAll('.nav-links a').forEach(function(a){var h=a.getAttribute('href');if(h&&h==='#'+cur)a.classList.add('active');else a.classList.remove('active')})}
+function updateActiveNav(){var mid=window.scrollY+window.innerHeight/3,cur='',best=-1;for(var i=0;i<navSections.length;i++){var el=document.getElementById(navSections[i]);if(el){var t=el.getBoundingClientRect().top+window.scrollY;if(t<=mid&&t>best){best=t;cur=navSections[i]}}}document.querySelectorAll('.nav-links a').forEach(function(a){var h=a.getAttribute('href');if(h&&h==='#'+cur)a.classList.add('active');else a.classList.remove('active')})}
 window.addEventListener('scroll',function(){var s=window.scrollY;btt.classList.toggle('show',s>500);eeFloat.classList.toggle('show',s>500);updateActiveNav()},{passive:true});
 updateActiveNav();
 btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
@@ -4789,7 +4796,7 @@ var sc=new THREE.Scene();sc.fog=new THREE.Fog(0x020a06,30,60);
 var isMob=w<769;
 if(isMob){sc.fog=new THREE.Fog(0x0e0e13,12.5,19)}
 var cam=new THREE.PerspectiveCamera(32,w/h,.1,100);cam.position.set(0,3.8,10.5);cam.lookAt(0,isMob?-.95:-.5,0);
-var ren=new THREE.WebGLRenderer({antialias:true,alpha:true});ren.setClearColor(0x000000,0);ren.setSize(w,h);ren.setPixelRatio(Math.min(window.devicePixelRatio,3));
+var ren=new THREE.WebGLRenderer({antialias:true,alpha:true});ren.setClearColor(0x000000,0);ren.setSize(w,h);ren.setPixelRatio(Math.min(window.devicePixelRatio,isMob?2:3));
 ren.shadowMap.enabled=true;ren.shadowMap.type=THREE.PCFSoftShadowMap;
 ren.toneMapping=THREE.NoToneMapping;ren.toneMappingExposure=1.0;
 ct.appendChild(ren.domElement);
@@ -5130,7 +5137,8 @@ ren.render(sc,cam);
 var lastW=ct.clientWidth;if(w>=769){window.addEventListener('resize',function(){var nw=ct.clientWidth,nh=ct.clientHeight;if(nw>0&&nh>0&&nw!==lastW){lastW=nw;cam.aspect=nw/nh;cam.updateProjectionMatrix();ren.setSize(nw,nh)}});}
 }catch(e){console.warn('3D scene error:',e);var ct=document.getElementById('deskScene');ct.style.display='flex';ct.style.alignItems='center';ct.style.justifyContent='center';ct.innerHTML='<div style="text-align:center;color:#64748b"><div style="font-size:4rem;margin-bottom:1rem">🖥️</div><p>3D Desk Scene</p><small style="opacity:.6">Interactive 3D scene requires Three.js CDN access</small></div>'}
 }
-if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initDeskScene);}else{initDeskScene();}
+function startDesk(){var go=function(){initDeskScene()};if('requestIdleCallback' in window){requestIdleCallback(go,{timeout:1200})}else{setTimeout(go,200)}}
+if(document.readyState==='complete'){startDesk()}else{window.addEventListener('load',startDesk)}
 })();
 
 // Resume modal
@@ -6419,8 +6427,8 @@ var overlay=document.getElementById('kbdOverlay');
 if(!overlay)return;
 var closeBtn=document.getElementById('kbdClose');
 var gPrefix=false,gTimer=null;
-function openOverlay(){overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
-function closeOverlay(){overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+function openOverlay(){overlay.classList.add('open');overlay.removeAttribute('inert');overlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+function closeOverlay(){overlay.classList.remove('open');overlay.setAttribute('inert','');overlay.setAttribute('aria-hidden','true');document.body.style.overflow=''}
 function isTyping(e){var t=e.target;if(!t)return false;var tag=(t.tagName||'').toLowerCase();return tag==='input'||tag==='textarea'||tag==='select'||t.isContentEditable}
 function scrollToId(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
 function resetG(){gPrefix=false;if(gTimer){clearTimeout(gTimer);gTimer=null}}
