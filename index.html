@@ -256,7 +256,9 @@ html.menu-open,html.menu-open body{overflow:hidden!important;touch-action:none}
 .tl-section-label{font-family:'Inter',sans-serif;font-size:.62rem;text-transform:uppercase;letter-spacing:.13em;color:var(--text-gray-500);font-weight:700;margin-bottom:.4rem;display:block;position:relative;z-index:1}
 .tl-honors,.tl-skills{display:flex;flex-wrap:wrap;gap:.35rem;position:relative;z-index:1}
 .tl-honors{margin-bottom:.75rem}
-.tl-ext{width:.8rem;height:.8rem;opacity:0;transform:translate(-3px,3px);transition:opacity .25s ease,transform .25s ease;flex-shrink:0}
+.tl-ext{width:.8rem;height:.8rem;opacity:.7;transform:none;color:var(--purple-400);transition:opacity .25s ease,transform .25s ease;flex-shrink:0}
+.tl-school:hover .tl-ext{opacity:1;transform:translate(2px,-2px)}
+@media(max-width:768px){.tl-school-wrap{font-size:.82rem;line-height:1.4}.tl-school{display:inline}.tl-school .tl-ext{display:inline-block;vertical-align:-.05em;margin-left:.3rem}.tl-school::after{display:none}}
 .tl-honor{font-size:.7rem;padding:.3rem .65rem;border-radius:.4rem;font-weight:600;transition:background .25s ease,border-color .25s ease,color .25s ease,transform .25s ease;display:inline-block;line-height:1.3;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 10%,transparent),color-mix(in srgb,var(--accent) 3%,transparent));color:#6ee7b7;border:1px solid color-mix(in srgb,var(--accent) 25%,transparent)}
 .tl-chip{font-size:.7rem;padding:.3rem .65rem;border-radius:.4rem;font-weight:500;transition:background .25s ease,border-color .25s ease,color .25s ease,transform .25s ease;display:inline-block;line-height:1.3;background:rgba(255,255,255,.03);color:var(--text-gray-400);border:1px solid rgba(255,255,255,.08)}
 @media(hover:hover){.tl-honor:hover{background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 20%,transparent),color-mix(in srgb,var(--accent) 8%,transparent));border-color:color-mix(in srgb,var(--accent) 45%,transparent);transform:translateY(-1px)}.tl-chip:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#cbd5e1;transform:translateY(-1px)}}
