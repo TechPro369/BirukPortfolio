@@ -80,8 +80,9 @@ html.menu-open .navbar{backdrop-filter:none!important;-webkit-backdrop-filter:no
 .mobile-toggle span:nth-child(3){top:80%;transform:translateY(-100%)}
 .mobile-toggle.open span:nth-child(1){top:50%;transform:translateY(-50%) rotate(45deg);background:#fff}
 .mobile-toggle.open span:nth-child(2){opacity:0}
-.mobile-toggle::before{content:"";position:absolute;inset:-.6rem;border-radius:50%;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.03);opacity:0;transform:scale(.7);transition:opacity .3s ease,transform .3s ease;pointer-events:none}
+.mobile-toggle::before{content:"";position:absolute;inset:-.45rem;border-radius:50%;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.03);opacity:0;transform:scale(.7);transition:opacity .3s ease,transform .3s ease;pointer-events:none}
 .mobile-toggle.open::before{opacity:1;transform:none}
+.mobile-toggle.open span{width:78%;left:11%}
 .mobile-menu .mm-meta{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:.9rem;border-top:1px solid rgba(255,255,255,.07);font-size:.78rem;color:var(--text-gray-500)}
 .mobile-menu .mm-meta a{font-size:.78rem;font-weight:500;color:var(--text-gray-400);padding:0;text-decoration:none}
 .mobile-menu .mm-meta a:active{color:var(--purple-400)}
