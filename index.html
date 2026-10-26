@@ -108,7 +108,7 @@ html.menu-open,html.menu-open body{overflow:hidden!important;touch-action:none}
 @media(max-width:768px){.hero-accent{align-items:stretch}.hero-accent .bar{height:auto;margin:.35rem 0 .3rem}}
 .hero h1{font-size:clamp(2.8rem,7vw,4.8rem);font-weight:800;color:var(--text-white);line-height:1.15}
 .hero h1 .purple{color:var(--purple-400)}
-.hero .wave-emoji{font-size:clamp(1.6rem,4vw,2.6rem);display:inline-block;animation:wave 2.5s ease-in-out infinite}
+.hero .wave-emoji{font-size:.6em;display:inline-block;position:relative;top:-.19em;transform-origin:70% 75%;animation:wave 2.5s ease-in-out infinite}
 @keyframes wave{0%,100%{transform:rotate(0)}15%{transform:rotate(14deg)}30%{transform:rotate(-8deg)}45%{transform:rotate(14deg)}60%{transform:rotate(-4deg)}75%{transform:rotate(10deg)}}
 .hero-sub{margin-left:1rem;margin-top:.3rem}
 .hero-role{font-family:'Inter',sans-serif;font-size:clamp(1.15rem,3vw,1.6rem);color:var(--text-gray-300)}
@@ -120,8 +120,8 @@ html.menu-open,html.menu-open body{overflow:hidden!important;touch-action:none}
 .hero-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.8rem;border-radius:.5rem;font-size:.95rem;font-weight:600;text-decoration:none;transition:all .3s ease;font-family:'Inter',sans-serif;cursor:pointer;border:none}
 .hero-btn-primary{background:var(--purple-500);color:#04130d;box-shadow:0 4px 20px rgba(16,185,129,.3)}
 .hero-btn-primary:hover{background:var(--purple-600);box-shadow:0 6px 30px rgba(16,185,129,.45);transform:translateY(-2px)}
-.hero-btn-outline{background:transparent;color:#fff;border:2px solid rgba(52,211,153,.55)}
-.hero-btn-outline:hover{border-color:var(--purple-400);background:rgba(52,211,153,.08);transform:translateY(-2px)}
+.hero-btn-outline{background:rgba(12,12,17,.88);color:#fff;border:1.5px solid rgba(255,255,255,.38);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.hero-btn-outline:hover{border-color:rgba(52,211,153,.6);background:rgba(52,211,153,.06);transform:translateY(-2px)}
 .hero-socials{display:flex;align-items:center;gap:.8rem;margin-top:.8rem}
 .hero-social-link{width:2.4rem;height:2.4rem;display:flex;align-items:center;justify-content:center;color:var(--text-gray-400);transition:all .3s;text-decoration:none}
 .hero-social-link:hover{transform:translateY(-2px)}
