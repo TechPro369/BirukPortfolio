@@ -1119,6 +1119,49 @@ kbd{display:inline-block;min-width:1.6rem;padding:.15rem .45rem;background:rgba(
 .resume-project-link:hover{text-decoration:underline}
 .resume-edu-line{font-size:.87rem;color:#333;margin-bottom:.1rem}
 .resume-edu-school{font-size:.85rem;color:#555;margin-bottom:.75rem}
+/* ═══ Resume viewer polish ═══ */
+.resume-overlay{background:rgba(5,5,9,.86);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.resume-modal{box-shadow:0 30px 90px rgba(0,0,0,.6)}
+@media(min-width:769px){.resume-overlay{padding:2rem 1.5rem;align-items:center}.resume-modal{height:calc(100vh - 4rem);max-height:1100px;border-radius:14px;overflow:hidden}.resume-overlay.open .resume-modal{animation:rsIn .35s cubic-bezier(.22,.61,.36,1)}}
+@keyframes rsIn{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
+.resume-toolbar{justify-content:space-between;gap:1rem;padding:.7rem 1rem .7rem 3rem;background:#fff;border-bottom:1px solid #e8e8ec}
+.rt-title{color:#9ca3af;font-weight:600;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.rt-actions{display:flex;align-items:center;gap:.45rem;flex-shrink:0}
+.rt-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.48rem .95rem;border-radius:999px;border:1px solid #d9dbe0;background:#fff;color:#1f2937;font-family:inherit;font-size:.8rem;font-weight:600;text-decoration:none;cursor:pointer;transition:background .2s ease,border-color .2s ease,transform .2s ease;-webkit-tap-highlight-color:transparent}
+.rt-btn svg{width:.95rem;height:.95rem}
+.rt-btn:hover{background:#f3f4f6;border-color:#c4c7cd}
+.rt-btn.rt-primary{background:#111318;border-color:#111318;color:#fff}
+.rt-btn.rt-primary:hover{background:#2a2d35;border-color:#2a2d35;transform:translateY(-1px)}
+.rt-close{width:2.2rem;height:2.2rem;margin-left:.15rem;border-radius:50%;border:1px solid #d9dbe0;background:#fff;color:#374151;font-size:1.35rem;line-height:1;cursor:pointer;transition:background .2s ease,transform .25s ease}
+.rt-close:hover{background:#f3f4f6;transform:rotate(90deg)}
+.rs-head{padding-bottom:1.1rem;margin-bottom:.4rem;border-bottom:1px solid #e5e7eb}
+.rs-head h1{font-size:2rem!important;letter-spacing:-.02em;margin-bottom:.15rem!important}
+.rs-role{font-size:.95rem;font-weight:600;color:#1f2937;margin-bottom:.15rem}
+.rs-clear{font-size:.82rem;color:#555;margin-bottom:.75rem}
+.rs-contacts{display:flex;flex-wrap:wrap;gap:.45rem 1.1rem;font-size:.82rem;color:#444}
+.rs-contacts>span,.rs-contacts>a{display:inline-flex;align-items:center;gap:.35rem;color:#444;text-decoration:none}
+.rs-contacts a{color:#1a73e8;text-decoration:none}
+.rs-contacts a:hover{text-decoration:underline}
+.rs-contacts .ic{width:.9rem;height:.9rem;color:#6b7280;flex-shrink:0}
+.rs-contacts .copy-btn{background:none;border:none;cursor:pointer;padding:0 2px;opacity:.55}
+.rs-contacts .copy-btn:hover{opacity:1}
+.resume-body .resume-section-title{border-bottom:1px solid #d6d9de!important;color:#0b0b0f;letter-spacing:.02em}
+.rs-projects li{margin-bottom:.45rem}
+.rs-plink{color:#1a73e8;text-decoration:none;font-weight:600;white-space:nowrap;font-size:.8rem}
+.rs-plink:hover{text-decoration:underline}
+.rs-center{text-align:center}
+.rs-head.rs-center{padding-bottom:.85rem;margin-bottom:0}
+.rs-head.rs-center+.resume-section-title{margin-top:1rem!important}
+.rs-center h1{text-align:center!important;font-size:2rem!important;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.35rem!important}
+.rs-center .rs-clear{font-size:.9rem;font-weight:600;color:#1f2937;margin-bottom:.35rem}
+.rs-sep{color:#9ca3af;margin:0 .45rem;font-weight:400}
+.rs-line{font-size:.85rem;color:#444;margin-bottom:.2rem}
+.rs-line a{color:#1a73e8;text-decoration:none}.rs-line a:hover{text-decoration:underline}
+.rs-dot{color:#9ca3af;margin:0 .35rem}
+.rs-line .copy-btn{background:none;border:none;cursor:pointer;padding:0 2px;opacity:.55;vertical-align:middle}.rs-line .copy-btn:hover{opacity:1}
+@media(max-width:600px){.rs-center h1{font-size:1.55rem!important}.rs-center .rs-clear{font-size:.82rem}.rs-line{font-size:.8rem}}
+@media(max-width:600px){.resume-toolbar{padding:.6rem .75rem .6rem 1.2rem}.rt-btn{padding:.45rem .7rem}.rt-btn:not(.rt-primary) span{display:none}.rs-head h1{font-size:1.6rem!important}.rs-role{font-size:.86rem}.rs-contacts{gap:.4rem .9rem;font-size:.78rem}}
+
 @media(max-width:600px){.resume-body{padding:1.5rem 1.2rem}.resume-toolbar{flex-wrap:nowrap;gap:.35rem;padding:.5rem}.resume-tool-btn{padding:.5rem .4rem;font-size:.72rem;gap:.3rem}.resume-tool-btn svg{width:.85rem;height:.85rem}}
 @media print{@page{size:letter;margin:.5in}html.printing,html.printing body{background:#fff!important;color:#000!important;margin:0!important;padding:0!important;overflow:visible!important;height:auto!important}html.printing body>*{display:none!important}html.printing #printZone{display:block!important;position:static!important;background:#fff!important;color:#000!important;width:100%!important;max-width:100%!important;padding:0!important;margin:0!important;box-shadow:none!important;border:none!important}html.printing #printZone *{color:#000!important;background:transparent!important;box-shadow:none!important;text-shadow:none!important;animation:none!important;transition:none!important;max-width:100%!important}html.printing #printZone a{color:#0066cc!important;text-decoration:underline!important}html.printing #printZone .resume-toolbar,html.printing #printZone .resume-close,html.printing #printZone .no-print{display:none!important}html.printing #printZone .resume-page-break{page-break-before:always;border:none;margin:0}html.printing #printZone .resume-section,html.printing #printZone .resume-job{page-break-inside:avoid}html.printing #printZone h1,html.printing #printZone h2,html.printing #printZone h3,html.printing #printZone h4{page-break-after:avoid}}
 #printZone{display:none}
@@ -1501,70 +1544,60 @@ html.menu-open .nav-brand{position:relative;z-index:170}
 </div></section>
 <div class="resume-overlay" id="resumeOverlay">
 <div class="resume-modal">
-<div class="resume-toolbar">
-<button class="resume-tool-btn" onclick="document.getElementById('resumeOverlay').classList.remove('open');document.body.style.overflow=''"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Return to Portfolio</button>
-<a class="resume-tool-btn" href="#" onclick="printResume();return false" style="text-decoration:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg> Print</a>
-<a class="resume-tool-btn" href="#" onclick="printResume();return false" style="text-decoration:none" title="Click, then choose 'Save as PDF' in the print dialog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
-</div>
+<div class="resume-toolbar"><div class="rt-title">Resume</div><div class="rt-actions"><button type="button" class="rt-btn" onclick="printResume()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg><span>Print</span></button><a class="rt-btn rt-primary" href="Biruk_Aregu_Resume.pdf" download="Biruk_Aregu_Resume.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg><span>Download PDF</span></a><button type="button" class="rt-close" aria-label="Close resume" onclick="document.getElementById('resumeOverlay').classList.remove('open');document.body.style.overflow=''">&times;</button></div></div>
 <div class="resume-body" id="resumeBody">
 
-<h1>Biruk Aregu</h1>
-<div class="resume-contact-line" style="margin-bottom:.2rem">Active DoD Secret Clearance | U.S. Citizen</div>
-<div class="resume-contact-line">Philadelphia, PA | <a href="mailto:aregubq@gmail.com">aregubq@gmail.com</a><button class="copy-btn" onclick="(function(btn){var t=document.createElement('textarea');t.value='aregubq@gmail.com';t.style.position='fixed';t.style.left='-9999px';document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(t);if(navigator.clipboard)navigator.clipboard.writeText('aregubq@gmail.com');btn.innerHTML='<svg class=\'ic\' style=\'color:var(--purple-400)\'><use href=\'#i-check\'/></svg>';setTimeout(function(){btn.innerHTML='<svg class=\'ic\'><use href=\'#i-copy\'/></svg>'},1500)})(this)" title="Copy email"><svg class="ic"><use href="#i-copy"/></svg></button> | (818)-668-4211 | <a href="https://www.linkedin.com/in/biruk-aregu" target="_blank">LinkedIn</a> <a href="https://www.birukaregu.com" target="_blank" rel="noopener">Website</a></div>
+<div class="rs-head rs-center"><h1>Biruk Aregu</h1><div class="rs-clear">Active DoD Secret Clearance <span class="rs-sep">|</span> U.S. Citizen</div><div class="rs-line">Philadelphia, PA <span class="rs-dot">•</span> <a href="mailto:aregubq@gmail.com">aregubq@gmail.com</a><button class="copy-btn" onclick="(function(btn){var t=document.createElement('textarea');t.value='aregubq@gmail.com';t.style.position='fixed';t.style.left='-9999px';document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(t);if(navigator.clipboard)navigator.clipboard.writeText('aregubq@gmail.com');btn.innerHTML='<svg class=\'ic\' style=\'color:var(--purple-400)\'><use href=\'#i-check\'/></svg>';setTimeout(function(){btn.innerHTML='<svg class=\'ic\'><use href=\'#i-copy\'/></svg>'},1500)})(this)" title="Copy email"><svg class="ic"><use href="#i-copy"/></svg></button></div><div class="rs-line"><a href="https://www.linkedin.com/in/biruk-aregu" target="_blank" rel="noopener noreferrer">LinkedIn</a> <span class="rs-dot">•</span> <a href="https://github.com/TechPro369" target="_blank" rel="noopener noreferrer">GitHub</a> <span class="rs-dot">•</span> <a href="https://www.birukaregu.com/" target="_blank" rel="noopener noreferrer">Website</a></div></div>
 
 <div class="resume-section-title">Professional Summary</div>
-<p>Results-driven IT professional with active DoD Secret Clearance and a B.S. in Computer and Information Science (Summa Cum Laude). Experienced supporting 1,500+ users across Windows, MacOS, and Linux in regulated environments. CompTIA Security+ and AWS Solutions Architect certified with strong technical skills in Splunk, Wireshark, Nmap, Active Directory, Azure AD, and ServiceNow. Known for analytical problem-solving, clear documentation, and a mission-focused mindset. Cloud expertise across AWS, Azure, and GCP enables secure, scalable, and compliant defense IT operations.</p>
+<p>Security-focused IT professional with an active DoD Secret Clearance and a B.S. in Computer and Information Sciences (Summa Cum Laude). CompTIA Security+ (DoD 8570 IAT Level II) and AWS Solutions Architect certified, with hands-on strength in SIEM monitoring, log analysis, and incident response developed through enterprise support of 1,500+ users in regulated environments and self-directed security projects spanning SOC triage, honeypot threat intelligence, and phishing simulation. Skilled across Splunk, Wireshark, Nmap, Active Directory, and ServiceNow, with cloud expertise in AWS, Azure, and GCP. Seeking to apply threat detection, analysis, and incident response skills within a Security Operations Center supporting mission-critical defense IT.</p>
 
 <div class="resume-section-title">Technical Skills</div>
 <ul>
-<li><strong>Operating Systems:</strong> Unix, Linux, Windows</li>
-<li><strong>SIEM &amp; Security Tools:</strong> Splunk, DataDog, MITRE ATT&amp;CK Framework, Wireshark, Nmap, Nessus, OSSEC, Endpoint Protection, IDS/IPS, Firewalls</li>
-<li><strong>Cloud Platforms:</strong> Azure, AWS, Google Cloud Platform (GCP)</li>
-<li><strong>Customer Support:</strong> Incident management, Troubleshooting, Ticketing systems (ServiceNow, Zendesk, Jira), Remote Desktop Support, User Training</li>
-<li><strong>Networking:</strong> TCP/IP, VPN, DNS, DHCP, LAN/WAN, Switches, Routers, NLA</li>
-<li><strong>Cybersecurity:</strong> Incident Response, Threat Hunting, Log File Analysis, Root Cause Analysis, Security Alert Severity Triage</li>
-<li><strong>Tools:</strong> MS Office, Active Directory, Azure Active Directory, ServiceNow, and Jira</li>
-<li><strong>Database Management:</strong> SQL, MySQL, Oracle, MongoDB</li>
-<li><strong>Programming Languages:</strong> Python, JavaScript, HTML, CSS, SQL, Bash/Shell Scripting</li>
-<li><strong>AI &amp; Machine Learning:</strong> Generative AI, LLMs (GPT, Claude, LLaMA), Prompt Engineering, AI Automation &amp; Workflows, RAG, LangChain, AI-Powered Applications</li>
-<li><strong>Systems Analysis &amp; Automation:</strong> Business Requirements, Feasibility, Cost-Effectiveness, Compliance, Testability, Functional/Regression Testing, Release Management, UiPath, Power Automate, COTS/GOTS, Audit Readiness, Internal Controls</li>
-<li><strong>Testing &amp; QA:</strong> UAT, SDLC, STLC, Agile, Defect Tracking, Test Scripts, User Acceptance Testing</li>
+<li><strong>Security Operations &amp; SIEM:</strong> Splunk, Wireshark, Nmap, Nessus, IDS/IPS, Firewalls, Incident Response, Threat Hunting, Log Analysis, Root Cause Analysis, MITRE ATT&amp;CK, Sigma Rules, IOC Hunting, NIST 800-61</li>
+<li><strong>Operating Systems:</strong> Windows, Linux, macOS</li>
+<li><strong>Cloud Platforms:</strong> AWS, Azure, GCP</li>
+<li><strong>Identity &amp; Access (IAM):</strong> Active Directory, Azure AD</li>
+<li><strong>Networking:</strong> TCP/IP, VPN, DNS, DHCP, LAN/WAN, Switches, Routers, OSI Model, SNMP, Firewall ACLs, Configuration Backups, Patching, Vulnerability Remediation</li>
+<li><strong>Endpoint &amp; Service Management:</strong> ServiceNow, Jira, Zendesk, Remote Desktop, MECM/SCCM, Intune, Tanium, Software Packaging, MS Office, User Training</li>
+<li><strong>Systems Analysis &amp; Automation:</strong> Business Requirements, Feasibility, Cost-Effectiveness, Compliance, Testability, Regression Testing, Release Management, UiPath, Power Automate, COTS/GOTS, Audit Readiness, Internal Controls</li>
+<li><strong>Testing &amp; QA:</strong> UAT, SDLC, STLC, Agile, Defect Tracking, Test Scripts</li>
+<li><strong>Databases:</strong> SQL, MySQL, Oracle, MongoDB</li>
+<li><strong>Programming &amp; Scripting:</strong> Python, JavaScript, HTML, CSS, SQL, Bash Scripting</li>
+<li><strong>Core Competencies:</strong> Attention to Detail, Customer Service, Oral Communication, Problem Solving</li>
 </ul>
 
-<div class="resume-section-title">IT Certifications</div>
-<p>CompTIA Security+ (2025)</p>
-<p>AWS Certified Solutions Architect Associate (2026)</p>
+<div class="resume-section-title">Certifications</div>
+<ul>
+<li>CompTIA Security+ (2025) — DoD 8570 IAT Level II</li>
+<li>AWS Certified Solutions Architect – Associate (2026)</li>
+</ul>
 
 <div class="resume-section-title">Professional Experience</div>
 
-<div class="resume-job-head"><span class="resume-job-title">IT Specialist (Tier II)</span><span class="resume-job-date">June 2026 – Present</span></div>
-<div class="resume-job-company">Defense Logistics Agency, DLA | Philadelphia, PA</div>
+<div class="resume-job-head"><span class="resume-job-title">IT Support Specialist II</span><span class="resume-job-date">June 2026 – Present</span></div>
+<div class="resume-job-company">Defense Logistics Agency (DLA) | Philadelphia, PA</div>
 <ul>
-<li>Resolve escalated Tier II tickets daily — troubleshooting complex hardware, software, network connectivity, and access issues across Active Directory and ServiceNow within strict SLA targets.</li>
-<li>Monitor production systems, servers, and overnight batch jobs to ensure 24/7 continuity of operations, surfacing and addressing failures before they impact end-users.</li>
-<li>Manage incidents, service requests, and change tickets in ServiceNow end-to-end, minimizing downtime and maintaining audit-ready documentation aligned with ITIL practices.</li>
-<li>Install, configure, and image desktops, laptops, and printers for new-hire deployments and refresh cycles across the DLA Philadelphia site.</li>
-<li>Execute OS deployments, patches, and configuration changes — administering Active Directory accounts, escalating unresolved issues, and documenting root cause for recurring incidents.</li>
-<li>Conduct advanced troubleshooting and root-cause analysis, while managing IT asset lifecycle (tracking, inventory, and deployment).</li>
+<li><strong>Incident Response:</strong> Triage and resolve 130 hardware, VDI, and VPN incidents per month for DLA users in a classified (Secret) environment, documenting root cause, escalation, and resolution in ServiceNow.</li>
+<li><strong>Endpoint Security &amp; Compliance:</strong> Enforce DoD endpoint-security and STIG policies and track user, device, and system compliance across the DLA workstation fleet, supporting audit readiness for security inspections.</li>
+<li><strong>System Hardening &amp; Deployment:</strong> Reimage and deploy workstations via MECM/SCCM and Intune using standardized, policy-compliant builds, and remediate permission and credential issues on Windows and Linux.</li>
+<li><strong>Documentation:</strong> Author SOPs and knowledge-based articles for standard support and security procedures, reducing repeat incidents and accelerating new-technician onboarding.</li>
 </ul>
 
-<div class="resume-job-head"><span class="resume-job-title">Technology Analyst</span><span class="resume-job-date">November 2024 – May 2026</span></div>
-<div class="resume-job-company">Independence Blue Cross, IBX | Philadelphia, PA</div>
+<div class="resume-job-head"><span class="resume-job-title">Technology Analyst</span><span class="resume-job-date">November 2024 – November 2025</span></div>
+<div class="resume-job-company">Independence Blue Cross (IBX) | Philadelphia, PA</div>
 <ul>
-<li>Provide technical support to end-users by troubleshooting hardware, software, and network issues across Windows and MacOS environments ensuring system reliability and peak performance.</li>
-<li>Trained and mentored new hires on IT Support processes, troubleshooting, and customer service best practices.</li>
-<li>Resolve 15-30 IT requests and incidents daily via ServiceNow leveraging ITIL best practices to support 1,500+ employees.</li>
-<li>Configure and troubleshoot mobile devices, Citrix, VMware, and other virtual desktop environments to maintain uninterrupted user access.</li>
-<li>Deliver clear, customer-focused communication to diagnose issues, provide tailored resolutions, and document procedures for future reference.</li>
-<li>Continuously develop technical skills to adapt to evolving IT systems and improve overall support efficiency.</li>
+<li><strong>Service Delivery:</strong> Resolved 15–30 ServiceNow incidents and service requests daily for 1,500+ employees in a regulated healthcare enterprise, applying ITIL best practices to ensure system reliability.</li>
+<li><strong>Endpoint &amp; Virtualization Support:</strong> Configured and troubleshot Citrix, VMware, mobile, and VDI environments on Windows and macOS to maintain uninterrupted, secure user access.</li>
+<li><strong>User Enablement:</strong> Diagnosed issues and delivered tailored, customer-focused resolutions with clear documentation; trained and mentored new hires on IT support processes and customer-service best practices.</li>
 </ul>
 
 <div class="resume-job-head"><span class="resume-job-title">IT Support Intern</span><span class="resume-job-date">January 2022 – May 2022</span></div>
 <div class="resume-job-company">Harrisburg University of Science and Technology | Philadelphia, PA</div>
 <ul>
-<li>Reduced incident resolution time by 35% through proactive troubleshooting and process improvements in ServiceNow.</li>
-<li>Resolved 95% of hardware/software/network issues on first contact across Windows and Linux systems.</li>
-<li>Managed Active Directory accounts, improving account provisioning efficiency by 25%.</li>
+<li><strong>Process Improvement:</strong> Reduced incident resolution time by 35% through proactive troubleshooting and ServiceNow workflow improvements.</li>
+<li><strong>First-Contact Resolution:</strong> Resolved 95% of hardware, software, and network issues on first contact across Windows and Linux systems.</li>
+<li><strong>Identity &amp; Access:</strong> Managed Active Directory accounts, improving account provisioning efficiency by 25%.</li>
 </ul>
 
 <div class="resume-job-head"><span class="resume-job-title">UAT Software Tester</span><span class="resume-job-date">March 2016 – October 2016</span></div>
@@ -1576,62 +1609,22 @@ html.menu-open .nav-brand{position:relative;z-index:170}
 <li>Gained practical experience in SDLC and STLC processes, improving test case accuracy and quality.</li>
 </ul>
 
-<div class="resume-section-title">Projects</div>
-
-<div class="resume-project-title">Cybersecurity Researcher</div>
-<div class="resume-job-company">Harrisburg University of Science and Technology | Philadelphia, PA | September 2021 – December 2021</div>
-<ul>
-<li>Analyzed data from 100+ users to identify vulnerabilities in social media use, presenting solutions to faculty and students that reduced potential threats.</li>
-<li>Recommended security best practices including patch management, secure configurations, and privacy controls.</li>
-<li>Developed and delivered a concise security awareness guide to help users recognize and avoid common cyber threats.</li>
+<div class="resume-section-title">Security Projects</div>
+<ul class="rs-projects">
+<li><strong>SOC Triage Console</strong> — Alert triage, MITRE ATT&amp;CK mapping, Sigma rule logic, and IOC hunting aligned to NIST 800-61 incident handling. <a class="rs-plink" href="https://techpro369.github.io/soc-triage-console/" target="_blank" rel="noopener noreferrer">View Project ↗</a></li>
+<li><strong>Honeypot Threat Intelligence System</strong> — Built a honeypot network to detect, analyze, and classify cyber threats and generate intel from live intrusion attempts. <a class="rs-plink" href="https://github.com/TechPro369/honeypot-threat-intelligence" target="_blank" rel="noopener noreferrer">View Project ↗</a></li>
+<li><strong>Phishing Attack Simulator</strong> — Built an adaptive phishing simulator to train users and measure threat-detection and response behavior. <a class="rs-plink" href="https://github.com/TechPro369/phishguard-trainer" target="_blank" rel="noopener noreferrer">View Project ↗</a></li>
+<li><strong>Security Awareness Chatbot</strong> — Built an NLP chatbot that boosted phishing detection in pilot testing. <a class="rs-plink" href="https://github.com/TechPro369/security-awareness-chatbot" target="_blank" rel="noopener noreferrer">View Project ↗</a></li>
+<li><strong>Social Media Cybersecurity Research</strong> — Researched cybercrime activity across social media platforms and delivered comprehensive security recommendations.</li>
+<li><strong>AWS VPC + Bastion (Terraform)</strong> — Provisioned VPC, bastion, EC2, NAT, S3, SNS, and IAM for CloudTrail-based threat detection using infrastructure-as-code. <a class="rs-plink" href="https://github.com/TechPro369/terraform-aws-vpc-bastion-honeypot" target="_blank" rel="noopener noreferrer">View Project ↗</a></li>
+<li><strong>AI Resume Analyzer</strong> — Built an AI tool that scores resumes, finds keywords, rewrites bullets, and exports PDFs. <a class="rs-plink" href="https://github.com/TechPro369/AI-Resume-Analyzer" target="_blank" rel="noopener noreferrer">View Project ↗</a></li>
+<li><strong>Personal Portfolio Website</strong> — Built a secure, responsive portfolio site with Next.js and React. <a class="rs-plink" href="https://www.birukaregu.com/" target="_blank" rel="noopener noreferrer">View Website ↗</a></li>
 </ul>
-
-<div class="resume-project-title">Security Awareness Chatbot</div>
-<ul>
-<li>Built an AI-powered chatbot using NLP to deliver personalized cybersecurity training, improving phishing recognition rates in pilot testing.</li>
-</ul>
-<a class="resume-project-link" href="https://github.com/TechPro369/security-awareness-chatbot" target="_blank">View Project</a>
-
-<div class="resume-project-title">Phishing Attack Simulator</div>
-<ul>
-<li>Created a phishing simulation tool with adaptive difficulty to train users on threat detection and response.</li>
-</ul>
-<a class="resume-project-link" href="#" target="_blank">View Project</a>
-
-<div class="resume-project-title">Honeypot Threat Intelligence System</div>
-<ul>
-<li>Created a distributed honeypot network designed to detect, analyze, and classify real-world cyber threats and provide actionable intelligence.</li>
-</ul>
-<a class="resume-project-link" href="https://github.com/TechPro369/honeypot-threat-intelligence" target="_blank">View Project</a>
-
-<div class="resume-project-title">AWS VPC + Bastion Honeypot Foundation (Terraform)</div>
-<ul>
-<li>Built a production-style AWS network foundation as Infrastructure-as-Code — multi-AZ VPC, bastion host with SSM access, private EC2, NAT Gateway, encrypted S3 bucket for honeypot logs, SNS alert topic, and IAM roles scaffolded for a future serverless CloudTrail threat detector.</li>
-</ul>
-<a class="resume-project-link" href="https://github.com/TechPro369/terraform-aws-vpc-bastion-honeypot" target="_blank" rel="noopener noreferrer">View Project</a>
-
-<div class="resume-project-title">AI Resume Analyzer</div>
-<ul>
-<li>Built an AI-powered tool that scores resumes against job descriptions, surfaces missing ATS keywords, rewrites weak bullets into metric-driven ones, and exports a polished PDF report. Privacy-first client-side architecture using the Claude API, Mammoth.js, and jsPDF.</li>
-</ul>
-<a class="resume-project-link" href="https://github.com/TechPro369/AI-Resume-Analyzer" target="_blank" rel="noopener noreferrer">View Project</a>
-
-<div class="resume-project-title">Burlington Beef – QueueDesk</div>
-<ul>
-<li>Built a digital queue management system for a local Philadelphia butcher shop — replaced paper queue lists and manual texting with automated WhatsApp/SMS notifications and a live counter-facing display. Deployed to production as a single-file web app on Cloudflare Pages.</li>
-</ul>
-<a class="resume-project-link" href="https://github.com/TechPro369/QueueDesk" target="_blank" rel="noopener noreferrer">View Project</a>
-
-<div class="resume-project-title">Personal Portfolio Website</div>
-<ul>
-<li>Designed and deployed a responsive portfolio site using Next.js and React to showcase projects and technical skills.</li>
-</ul>
-<a class="resume-project-link" href="https://www.birukaregu.com/" target="_blank" rel="noopener noreferrer">View Website</a>
 
 <div class="resume-section-title">Education</div>
-<div class="resume-edu-line"><strong>Bachelor of Science, Computer and Information Sciences</strong> | GPA: 3.96</div>
-<div class="resume-edu-school">Harrisburg University | Aug 2020 – May 2022</div>
-<div class="resume-edu-line"><strong>Associate in Applied Science, Computer Information Systems</strong> | GPA: 3.71</div>
+<div class="resume-edu-line"><strong>B.S., Computer and Information Sciences</strong> | GPA 3.96 — Summa Cum Laude</div>
+<div class="resume-edu-school">Harrisburg University of Science and Technology | Aug 2020 – May 2022</div>
+<div class="resume-edu-line"><strong>A.A.S., Computer Information Systems</strong> | GPA 3.71</div>
 <div class="resume-edu-school">Community College of Philadelphia | Sep 2018 – Aug 2020</div>
 
 <div class="no-print" style="text-align:center;padding:1.5rem 0 .5rem"><button onclick="document.getElementById('resumeOverlay').classList.remove('open');document.body.style.overflow='';document.getElementById('resumeBody').scrollTop=0" style="padding:.7rem 2rem;border-radius:2rem;font-size:.9rem;font-weight:600;cursor:pointer;border:2px solid #1e1e2e;background:#1e1e2e;color:#fff;font-family:inherit;display:inline-flex;align-items:center;gap:.5rem;transition:all .25s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:1rem;height:1rem"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Back to Portfolio</button></div>
