@@ -95,6 +95,7 @@ html.menu-open,html.menu-open body{overflow:hidden!important;touch-action:none}
 .mobile-menu a{font-size:1.15rem;color:var(--text-gray-300);padding:.25rem 0}
 @media(max-width:1100px){.nav-links{display:none}.mobile-toggle{display:block;width:1.5rem;height:1.5rem}.mobile-toggle span{height:2px}}
 @media(max-width:768px){.nav-brand .bracket{font-size:1.4rem}.nav-brand .name{font-size:1rem}}
+@media(max-width:768px){.hero-role{font-size:clamp(.85rem,4.2vw,1.4rem)!important;white-space:nowrap}}
 .section{padding:6rem 1.5rem;scroll-margin-top:5rem;overflow-x:hidden}
 .section-inner{max-width:1100px;margin:0 auto}
 .section-header{display:flex;align-items:center;justify-content:center;gap:.75rem;margin-bottom:2rem;padding:1rem 0;position:relative;z-index:1}
@@ -4716,7 +4717,7 @@ var hero=document.getElementById('hero');if(hero)new IntersectionObserver(functi
 })();
 
 Array.from(mm.querySelectorAll('a')).forEach(function(a){a.addEventListener('click',closeMenu)});
-var roles=["IT Specialist","Cybersecurity Analyst","Cloud Architect","AI Enthusiast","Web Developer","Problem Solver","Critical Thinker","Computer Enthusiast"],ri=0,ci=0,del=false,te=document.getElementById('typedText');
+var roles=["IT Specialist","Cybersecurity Professional","AI Enthusiast","Web Developer","Problem Solver","Critical Thinker","Computer Enthusiast"],ri=0,ci=0,del=false,te=document.getElementById('typedText');
 function aOrAn(w){if(!w)return'a ';return /^[AEIOU]/i.test(w)?'an ':'a '}
 function currentTyped(){var c=roles[ri];return (typeof currentLang!=='undefined'&&currentLang==='am')?c:aOrAn(c)+c}
 function ts(){var full=currentTyped();if(!del){ci++;te.textContent=full.slice(0,ci);if(ci===full.length){del=true;setTimeout(ts,2000);return}setTimeout(ts,80)}else{ci--;te.textContent=full.slice(0,ci);if(ci===0){del=false;ri=(ri+1)%roles.length;setTimeout(ts,200);return}setTimeout(ts,50)}}ts();
@@ -4894,7 +4895,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener
 // Language system
 var currentLang='en';
 var amRoles=["የአይቲ ስፔሻሊስት","የሳይበር ደህንነት አድናቂ","የክላውድ አድናቂ","የAI አድናቂ","ዌብ ዲቨሎፐር","ችግር ፈቺ","ወሳኝ አስተሳሰብ","የኮምፒውተር አድናቂ"];
-var enRoles=["IT Specialist","Cybersecurity Analyst","Cloud Architect","AI Enthusiast","Web Developer","Problem Solver","Critical Thinker","Computer Enthusiast"];
+var enRoles=["IT Specialist","Cybersecurity Professional","AI Enthusiast","Web Developer","Problem Solver","Critical Thinker","Computer Enthusiast"];
 var am={
 "nav-about":"ስለ እኔ","nav-edu":"ትምህርት","nav-work":"ስራ","nav-cert":"ሰርቲፊኬቶች","nav-skills":"ክህሎቶች","nav-projects":"ፕሮጀክቶች","nav-test":"ምስክርነቶች","nav-contact":"ያግኙን",
 "hero-hi":"ሰላም፣ እኔ","hero-name":"ብሩክ","hero-neny":"ነኝ","hero-im":"እኔ","hero-welcome":"የሳይበር ደህንነት · ክላውድ · AI — ስለ ቴክኖሎጂ እና ችግር መፍታት ቅንዓት","hero-connect":"እንገናኝ","hero-resume":"ሬዝዩሜ ይመልከቱ",
