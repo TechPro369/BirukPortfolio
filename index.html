@@ -704,10 +704,8 @@ html.lenis,html.lenis body{height:auto}
 .project-card.proj-is-featured{border-color:rgba(52,211,153,.28)}
 
 /* Consistent window frame on every project thumbnail */
-.project-thumb{height:calc(9.5rem + 22px);padding-top:22px;background:#0d0f12}
-.project-thumb::before{content:"";position:absolute;top:0;left:0;right:0;height:22px;z-index:3;border-bottom:1px solid rgba(255,255,255,.07);
- background:radial-gradient(circle at 12px 11px,#f87171 3.2px,transparent 3.8px),radial-gradient(circle at 25px 11px,#fbbf24 3.2px,transparent 3.8px),radial-gradient(circle at 38px 11px,#34d399 3.2px,transparent 3.8px),linear-gradient(#17191e,#131519)}
-.project-thumb .project-overlay{top:22px}
+.project-thumb{height:calc(9.5rem + 22px);padding-top:0;background:#0d0f12}
+.project-thumb .project-overlay{top:0}
 
 .proj-btn svg.play-ic{width:.7rem;height:.7rem;fill:none;stroke:currentColor;stroke-width:2.5}
 .contact-bg{background:var(--bg-deep);position:relative;padding-bottom:8rem;overflow:hidden}
