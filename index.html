@@ -6087,7 +6087,7 @@ var CS={'sentinel-watch':{ov:'swdOverlay',title:'Sentinel Watch',fn:'openSwDetai
 'social-media-research':{ov:'rsOverlay',title:'Social Media',fn:'openResearchModal'}};
 var CS_CAT={cybersecurity:'Cybersecurity',ai:'AI',webdev:'Web Development'};
 var csCur=null;
-function csCard(slug){var t=CS[slug].title,c=null;document.querySelectorAll('#projectsGrid .project-card').forEach(function(x){var h=x.querySelector('h3');if(h&&h.textContent.indexOf(t)===0)c=x});return c}
+function csCard(slug){var a=document.querySelector('#projectsGrid a[href="#'+slug+'"]');return a?a.closest('.project-card'):null}
 function csOpen(slug,opts){opts=opts||{};if(csCur)return true;if(!CS[slug])return false;var card=csCard(slug);if(!card)return false;
 var v=document.getElementById('csView'),inner=v.querySelector('.csv-inner'),ov=document.getElementById(CS[slug].ov);
 var body=ov.querySelector('.hpd-body,.rs-body'),sm=ov.querySelector('.hpd-header small'),lead=ov.querySelector('.rs-header > p');if(!body)return false;
