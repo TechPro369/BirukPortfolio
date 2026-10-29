@@ -6101,7 +6101,7 @@ var meta=v.querySelector('.csv-meta');meta.innerHTML='';
 var tg=card.querySelector('.tech-tags');if(tg)meta.appendChild(tg.cloneNode(true));
 var acts=card.querySelector('.project-actions').cloneNode(true);acts.querySelectorAll('a').forEach(function(a){if(/View Details/.test(a.textContent))a.remove()});meta.appendChild(acts);
 var bw=v.querySelector('.csv-body');bw.innerHTML='';bw.appendChild(body);
-if(!opts.noHistory)history.pushState({cs:slug},'','#'+slug);
+if(!opts.noHistory){try{history.pushState({cs:slug},'','#'+slug)}catch(e){}}
 document.documentElement.style.overflow='hidden';if(window.lenis)window.lenis.stop();
 v.classList.add('on');v.scrollTop=0;
 var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches&&!/motion=1/.test(location.search);
@@ -6120,8 +6120,8 @@ return true;
 }
 function csFocus(){var b=document.querySelector('#csView .csv-back');if(b)b.focus({preventScroll:true})}
 function csClose(fromPop){if(!csCur)return;
-if(!fromPop&&history.state&&history.state.cs){history.back();return}
-if(!fromPop&&location.hash==='#'+csCur.slug)history.replaceState(null,'',location.pathname+location.search);
+var hs=null;try{hs=history.state}catch(e){}if(!fromPop&&hs&&hs.cs){history.back();return}
+if(!fromPop&&location.hash==='#'+csCur.slug){try{history.replaceState(null,'',location.pathname+location.search)}catch(e){}}
 var v=document.getElementById('csView'),inner=v.querySelector('.csv-inner'),cur=csCur;csCur=null;if(CS[cur.slug].close)CS[cur.slug].close();
 var done=function(){v.classList.remove('on','ready');v.style.cssText='';inner.style.cssText='';cur.home.appendChild(cur.body);document.documentElement.style.overflow='';if(window.lenis)window.lenis.start();if(cur.focus&&cur.focus.focus)cur.focus.focus({preventScroll:true})};
 var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches&&!/motion=1/.test(location.search);
