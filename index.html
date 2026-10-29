@@ -1355,6 +1355,54 @@ html.menu-open .nav-brand{position:relative;z-index:170}
 .idemo-close:hover{background:rgba(255,82,82,.15);border-color:rgba(255,82,82,.5);color:#ff5252}
 .idemo-frame{flex:1;width:100%;border:0;background:#fff;display:block}
 @media(max-width:640px){.idemo-modal{height:100vh;max-width:100%;border-radius:0}.idemo-overlay{padding:0}}
+
+/* ═══ Education: the two cards are a closed book that opens left and right (desktop) ═══ */
+.ec-face{border-radius:inherit}
+.ec-front::before{content:"";position:absolute;left:0;top:0;bottom:0;width:22px;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.15) 60%,transparent);border-right:1px solid rgba(52,211,153,.22);z-index:3;pointer-events:none}
+.ec-front::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 40%,rgba(255,255,255,.07));opacity:0;transition:opacity 1.3s ease;z-index:4;pointer-events:none}
+.ec-back{transform:rotateY(180deg);background:linear-gradient(270deg,#1a1a22,#121218 70%);border:1px solid rgba(255,255,255,.07)}
+.ec-back::after{content:"";position:absolute;inset:16px;border:1px solid rgba(52,211,153,.1);border-radius:.8rem}
+.ec-face{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:.55rem;background:radial-gradient(ellipse at 50% 40%,#15241f 0%,#101015 62%),#101015;border:1px solid rgba(52,211,153,.22);border-radius:1.2rem;box-shadow:inset 0 0 80px rgba(0,0,0,.5);padding:2rem}
+.ec-frame{position:absolute;inset:14px;border:1px solid rgba(52,211,153,.18);border-radius:.85rem;pointer-events:none}
+.ec-frame::after{content:"";position:absolute;inset:6px;border:1px dashed rgba(52,211,153,.1);border-radius:.6rem}
+.ec-seal{width:4.6rem;height:4.6rem;border-radius:50%;display:grid;place-items:center;color:#34d399;background:radial-gradient(circle,rgba(52,211,153,.16),rgba(52,211,153,.04));border:1.5px solid rgba(52,211,153,.5);box-shadow:0 0 0 6px rgba(52,211,153,.06),0 0 30px rgba(52,211,153,.25);margin-bottom:.4rem}
+.ec-seal svg{width:2.1rem;height:2.1rem}
+.ec-k{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:#34d399}
+.ec-t{font:800 clamp(1.25rem,2.6vw,1.8rem)/1.2 'Inter',sans-serif;color:#fff;letter-spacing:-.01em;max-width:24ch}
+.ec-s{font-size:.95rem;font-weight:600;color:#6ee7b7}
+.ec-u{font-size:.85rem;color:var(--text-gray-400,#94a3b8)}
+.ec-hint{margin-top:.8rem;font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(148,163,184,.6)}
+
+.ob-book{position:relative;display:grid;grid-template-columns:1fr 1fr;perspective:3200px;margin-top:3rem}
+.ob-book .ob-page{position:relative;height:100%}
+.ob-book .tl-card{margin:0!important;width:100%!important;height:100%;border-radius:1.1rem;transform:none!important;opacity:1!important}
+.ob-right{grid-column:2;grid-row:1}
+.ob-right .tl-card{border-top-left-radius:.35rem;border-bottom-left-radius:.35rem}
+.ob-leaf{grid-column:2;grid-row:1;position:relative;transform-style:preserve-3d;transform-origin:left center;transition:transform 1.5s cubic-bezier(.55,.06,.22,1);z-index:5}
+.ob-leaf>div{position:absolute;inset:0;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+.ob-front .ec-face{border-radius:.35rem 1.2rem 1.2rem .35rem}
+.ob-front::before{content:"";position:absolute;left:0;top:0;bottom:0;width:20px;background:linear-gradient(90deg,rgba(0,0,0,.55),transparent);border-left:1px solid rgba(52,211,153,.3);z-index:3;border-radius:.35rem 0 0 .35rem}
+.ob-back{transform:rotateY(180deg)}
+.ob-back .tl-card{border-top-right-radius:.35rem;border-bottom-right-radius:.35rem}
+.ob-back::after,.ob-right::after{content:"";position:absolute;top:0;bottom:0;width:36px;pointer-events:none;z-index:4}
+.ob-back::after{right:0;background:linear-gradient(270deg,rgba(0,0,0,.4),transparent);border-radius:0 .35rem .35rem 0}
+.ob-right::after{left:0;background:linear-gradient(90deg,rgba(0,0,0,.4),transparent);border-radius:.35rem 0 0 .35rem}
+.ob-book.open .ob-leaf{transform:rotateY(-180deg)}
+.ob-book{transform:translateX(-25%);transition:transform 1.5s cubic-bezier(.55,.06,.22,1)}
+.ob-book.open{transform:none}
+.ob-book:not(.open) .ob-shadow{inset:auto 4% -22px 54%}
+.ob-shadow{transition:inset 1.5s cubic-bezier(.55,.06,.22,1)}
+/* emerald leather cover with gold foil */
+.ob-front .ec-face{background:radial-gradient(ellipse at 50% 35%,#13704f 0%,#0c4a35 55%,#08301f 100%);border:1px solid rgba(201,166,90,.4);box-shadow:inset 0 0 90px rgba(0,0,0,.45),inset 0 0 0 1px rgba(255,255,255,.04)}
+.ob-front .ec-frame{border-color:rgba(217,185,106,.53)}.ob-front .ec-frame::after{border-color:rgba(217,185,106,.25)}
+.ob-front .ec-seal{color:#e8c979;border-color:rgba(232,201,121,.67);background:radial-gradient(circle,rgba(232,201,121,.15),rgba(232,201,121,.04));box-shadow:0 0 0 6px rgba(232,201,121,.08),0 0 26px rgba(232,201,121,.25)}
+.ob-front .ec-k{color:#e8c979}.ob-front .ec-t{color:#fbf3dc}.ob-front .ec-s{color:#f0d68e}.ob-front .ec-u{color:#cfe3d8}
+.ob-front::before{background:linear-gradient(90deg,rgba(0,0,0,.45),transparent);border-left-color:rgba(232,201,121,.4)}
+.ob-spine{position:absolute;left:50%;top:-6px;bottom:-6px;width:2px;transform:translateX(-1px);background:linear-gradient(180deg,transparent,rgba(52,211,153,.45),transparent);z-index:6;opacity:0;transition:opacity .5s ease 1.2s}
+.ob-book.open .ob-spine{opacity:1}
+.ob-book .tl-connector{position:absolute;left:50%;bottom:-1.1rem;transform:translateX(-50%)!important;margin:0;z-index:7;opacity:0!important;transition:opacity .5s ease 1.35s!important}
+.ob-book.open .tl-connector{opacity:1!important}
+.ob-shadow{position:absolute;inset:auto 8% -22px 8%;height:30px;background:radial-gradient(ellipse at center,rgba(0,0,0,.6),transparent 70%);z-index:-1}
 </style>
 <script type="application/ld+json">
 {
@@ -5005,7 +5053,7 @@ var am={
 "p4-t":"የማህበራዊ ሚዲያ ሳይበር ደህንነት ምርምር","p4-d":"በማህበራዊ ሚዲያ መድረኮች ላይ የሳይበር ወንጀለኞችን እንቅስቃሴ ከሰፊ የደህንነት ምክሮች ጋር የሚተነትን ምርምር ፕሮጀክት።",
 "p5-t":"የፊሺንግ ጥቃት ሲሙሌተር","p5-d":"ተጠቃሚዎች የደህንነት ስጋቶችን በመለየት እና በማስወገድ ላይ ለማሰልጠን ፊሺንግ ጥቃቶችን የሚመስል ትምህርታዊ መሳሪያ።",
 "p6-t":"የደንበኛ ፖርትፎሊዮ ድህረ ገጽ","p6-d":"ለደንበኛ የተነደፈ እና የተገነባ አስደናቂ፣ ዘመናዊ ፖርትፎሊዮ ድህረ ገጽ፣ ውብ ንድፍ፣ ለስላሳ አኒሜሽኖች እና ምላሽ ሰጪ አቀማመጥ ያለው።",
-"test-title":"ምስክርነቶች","test-sub":"ሌሎች ከእኔ ጋር ስለ መስራት ምን ይላሉ ያንብቡ","sub-about":"ከሥራው በስተጀርባ ያለው ጉዞ።","sub-work":"በፌዴራል እና በጤና አጠባበቅ አካባቢዎች ወሳኝ ስርዓቶችን መደገፍ።","sub-projects":"በተግባር የተገነቡ፣ የተለቀቁ እና የተመዘገቡ የደህንነት፣ የክላውድ እና የድር ፕሮጀክቶች።","sub-certs":"በኢንዱስትሪ እውቅና ያገኙ ምስክርነቶች እና የትምህርት ክብሮች።","sub-skills":"በየቀኑ የምጠቀምባቸው መሳሪያዎች እና ሙያዎች።","po-0":"የTier-1 SOC የስራ ሂደት · 12 Sigma ደንቦች · NIST 800-61","po-1":"ግላዊነትን የሚያስቀድም · AES-256-GCM · ምንም ክትትል የለም","po-2":"ሙሉ በሙሉ በኮድ የተገነባ ባለብዙ-AZ AWS ኔትወርክ","po-3":"የቀጥታ ጥቃት ዝርዝር · የመነሻ ካርታ · የክብደት ደረጃ","po-4":"የ10 ኢሜይል ስልጠና ከአደጋ ምልክት ነጥብ ጋር","po-5":"ስለ SOC፣ SIEM፣ ፊሺንግ እና ሌሎችም ይጠይቁ","po-6":"የATS ነጥብ · የጎደሉ ቁልፍ ቃላት · PDF ሪፖርት","po-7":"3D ዋና ገጽ · እንግሊዝኛ + አማርኛ · ተደራሽ","po-8":"ለአነስተኛ ንግዶች የሚያገለግል የቀጥታ ስቱዲዮ ድረ-ገጽ","po-9":"ለደንበኛ የተነደፈ እና የተረከበ","po-10":"የSMS/WhatsApp ማሳወቂያዎች · የቀጥታ ቆጣሪ ማሳያ","po-11":"በማህበራዊ ሚዲያ ላይ ያሉ የሳይበር ወንጀል ቅጦች","cw-replay":"እንደገና አጫውት","cw-transcript":"ትራንስክሪፕት በጥያቄ ይገኛል","contact-open":"ለእድሎች ክፍት","cw-open":"ሁሉንም ምስክርነቶች ይመልከቱ","ct-title":"የተረጋገጠ፣ የደህንነት ፍቃድ ያለው እና እውቅና ያገኘ","ct-sub":"CompTIA Security+ · AWS Solutions Architect · ንቁ የDoD ሚስጥራዊ የደህንነት ፍቃድ · Summa Cum Laude እና ሌሎችም።","cw-hint":"በራሱ ይጫወታል · በማንኛውም ጊዜ ያሸብልሉ","cw-done":"ወደ ድረ-ገጹ ይመለሱ","cred-clr-desc":"ንቁ የአሜሪካ መከላከያ ሚኒስቴር (DoD) ሚስጥራዊ የደህንነት ፍቃድ። በአሁኑ ጊዜ የመከላከያ ሎጂስቲክስ ኤጀንሲን (DLA) በመደገፍ ላይ።","cred-dean-desc":"በሃሪስበርግ ዩኒቨርሲቲ የፕሬዚዳንት ዝርዝር እና በፊላደልፊያ ኮሚዩኒቲ ኮሌጅ የዲን ዝርዝር ውስጥ ተካቷል።","sk-secnet-s":"ደህንነት","sk-cloudsys-s":"ክላውድ","sk-dev-s":"ልማት","sk-ops-s":"አይቲ ኦፕስ","sk-ai-s":"AI","sk-secnet-t":"ደህንነት እና ኔትወርኪንግ","sk-secnet-d":"ስጋት ማወቅ፣ ክስተት ምላሽ እና የኔትወርክ አርክቴክቸር — መሰረተ ልማትን ስጠብቅ ወይም ችግር ስመረምር የምጠቀምባቸው መሳሪያዎች።","sk-cloudsys-t":"ክላውድ እና ሲስተሞች","sk-cloudsys-d":"የመልቲ-ክላውድ አርክቴክቸር እና ሲስተሞች — የምነድፋቸው፣ የማሰማራቸው እና የማስተዳድራቸው አካባቢዎች።","sk-dev-t":"ልማት","sk-dev-d":"ስክሪፕቲንግ እና የዳታ ስራ — ለመገንባት፣ ለማውቶሜት እና ለማቅረብ የምጠቀምባቸው ቋንቋዎችና ዳታቤዞች።","sk-ops-t":"የአይቲ ኦፕሬሽንስ","sk-ops-d":"የድርጅት ድጋፍ፣ ITSM እና የተጠቃሚ አገልግሎቶች — ሰራተኞችን ምርታማ እና ሃርድዌርን ጤናማ ማድረግ።","sk-ai-t":"AI እና አውቶሜሽን","sk-ai-d":"ጀነሬቲቭ AI፣ ፕሮምፕት ኢንጂነሪንግ እና አውቶሜሽን — የተሻሉ መሳሪያዎችንና የስራ ሂደቶችን የምገነባበት።","sub-edu":"በኮምፒውተር እና ኢንፎርሜሽን ሳይንስ Summa Cum Laude።",
+"test-title":"ምስክርነቶች","test-sub":"ሌሎች ከእኔ ጋር ስለ መስራት ምን ይላሉ ያንብቡ","sub-about":"ከሥራው በስተጀርባ ያለው ጉዞ።","sub-work":"በፌዴራል እና በጤና አጠባበቅ አካባቢዎች ወሳኝ ስርዓቶችን መደገፍ።","sub-projects":"በተግባር የተገነቡ፣ የተለቀቁ እና የተመዘገቡ የደህንነት፣ የክላውድ እና የድር ፕሮጀክቶች።","sub-certs":"በኢንዱስትሪ እውቅና ያገኙ ምስክርነቶች እና የትምህርት ክብሮች።","sub-skills":"በየቀኑ የምጠቀምባቸው መሳሪያዎች እና ሙያዎች።","ec-k":"ትምህርት","ec-t":"የሳይንስ ባችለር በኮምፒውተር እና ኢንፎርሜሽን ሳይንስ","ec-u":"ሃሪስበርግ ዩኒቨርሲቲ · 2022","po-0":"የTier-1 SOC የስራ ሂደት · 12 Sigma ደንቦች · NIST 800-61","po-1":"ግላዊነትን የሚያስቀድም · AES-256-GCM · ምንም ክትትል የለም","po-2":"ሙሉ በሙሉ በኮድ የተገነባ ባለብዙ-AZ AWS ኔትወርክ","po-3":"የቀጥታ ጥቃት ዝርዝር · የመነሻ ካርታ · የክብደት ደረጃ","po-4":"የ10 ኢሜይል ስልጠና ከአደጋ ምልክት ነጥብ ጋር","po-5":"ስለ SOC፣ SIEM፣ ፊሺንግ እና ሌሎችም ይጠይቁ","po-6":"የATS ነጥብ · የጎደሉ ቁልፍ ቃላት · PDF ሪፖርት","po-7":"3D ዋና ገጽ · እንግሊዝኛ + አማርኛ · ተደራሽ","po-8":"ለአነስተኛ ንግዶች የሚያገለግል የቀጥታ ስቱዲዮ ድረ-ገጽ","po-9":"ለደንበኛ የተነደፈ እና የተረከበ","po-10":"የSMS/WhatsApp ማሳወቂያዎች · የቀጥታ ቆጣሪ ማሳያ","po-11":"በማህበራዊ ሚዲያ ላይ ያሉ የሳይበር ወንጀል ቅጦች","cw-replay":"እንደገና አጫውት","cw-transcript":"ትራንስክሪፕት በጥያቄ ይገኛል","contact-open":"ለእድሎች ክፍት","cw-open":"ሁሉንም ምስክርነቶች ይመልከቱ","ct-title":"የተረጋገጠ፣ የደህንነት ፍቃድ ያለው እና እውቅና ያገኘ","ct-sub":"CompTIA Security+ · AWS Solutions Architect · ንቁ የDoD ሚስጥራዊ የደህንነት ፍቃድ · Summa Cum Laude እና ሌሎችም።","cw-hint":"በራሱ ይጫወታል · በማንኛውም ጊዜ ያሸብልሉ","cw-done":"ወደ ድረ-ገጹ ይመለሱ","cred-clr-desc":"ንቁ የአሜሪካ መከላከያ ሚኒስቴር (DoD) ሚስጥራዊ የደህንነት ፍቃድ። በአሁኑ ጊዜ የመከላከያ ሎጂስቲክስ ኤጀንሲን (DLA) በመደገፍ ላይ።","cred-dean-desc":"በሃሪስበርግ ዩኒቨርሲቲ የፕሬዚዳንት ዝርዝር እና በፊላደልፊያ ኮሚዩኒቲ ኮሌጅ የዲን ዝርዝር ውስጥ ተካቷል።","sk-secnet-s":"ደህንነት","sk-cloudsys-s":"ክላውድ","sk-dev-s":"ልማት","sk-ops-s":"አይቲ ኦፕስ","sk-ai-s":"AI","sk-secnet-t":"ደህንነት እና ኔትወርኪንግ","sk-secnet-d":"ስጋት ማወቅ፣ ክስተት ምላሽ እና የኔትወርክ አርክቴክቸር — መሰረተ ልማትን ስጠብቅ ወይም ችግር ስመረምር የምጠቀምባቸው መሳሪያዎች።","sk-cloudsys-t":"ክላውድ እና ሲስተሞች","sk-cloudsys-d":"የመልቲ-ክላውድ አርክቴክቸር እና ሲስተሞች — የምነድፋቸው፣ የማሰማራቸው እና የማስተዳድራቸው አካባቢዎች።","sk-dev-t":"ልማት","sk-dev-d":"ስክሪፕቲንግ እና የዳታ ስራ — ለመገንባት፣ ለማውቶሜት እና ለማቅረብ የምጠቀምባቸው ቋንቋዎችና ዳታቤዞች።","sk-ops-t":"የአይቲ ኦፕሬሽንስ","sk-ops-d":"የድርጅት ድጋፍ፣ ITSM እና የተጠቃሚ አገልግሎቶች — ሰራተኞችን ምርታማ እና ሃርድዌርን ጤናማ ማድረግ።","sk-ai-t":"AI እና አውቶሜሽን","sk-ai-d":"ጀነሬቲቭ AI፣ ፕሮምፕት ኢንጂነሪንግ እና አውቶሜሽን — የተሻሉ መሳሪያዎችንና የስራ ሂደቶችን የምገነባበት።","sub-edu":"በኮምፒውተር እና ኢንፎርሜሽን ሳይንስ Summa Cum Laude።",
 "t1-quote":"\"በ Wireless Security Management ኮርሴ ውስጥ ብሩክ ልዩ የትንተና ክህሎቶችን እና ተጋላጭነቶችን በመለየት እና መፍትሄዎችን በመተግበር ስልታዊ አቀራረብ አሳይቷል። የደህንነት መርሆዎችን መረዳቱ እና ለገሃዱ ዓለም ሁኔታዎች መተግበር መቻሉ አስደናቂ ነበር።\"",
 "t1-author":"Mani K.","t1-role":"Wireless Security Management፣ ሃሪስበርግ ዩኒቨርሲቲ",
 "t2-quote":"\"በኮምፒውተር እና የኢንፎርሜሽን ሳይንስ ፕሮግራም ውስጥ ከዚህ ገንቢ ጋር አብሬ ለመማር ዕድሉን ነበረኝ። ሁልጊዜ ቁርጠኛ፣ አስተዋይ እና ስለ ቴክኖሎጂ ቅንዓት ነበረው። ጠንካራ የስራ ሥነ-ምግባሩ እና ችግር ፈቺ አስተሳሰቡ ከእኩዮቹ መካከል እንዲለይ አድርጎታል።\"",
@@ -6837,6 +6885,23 @@ document.addEventListener('keydown',function(e){
 })();
 </script>
 <div id="printZone" aria-hidden="true"></div>
+<script>
+(function(){if(!matchMedia('(min-width: 769px)').matches)return;
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches&&!/motion=1/.test(location.search);
+var tl=document.querySelector('#education .timeline');if(!tl)return;
+var items=tl.querySelectorAll('.tl-item'),bs=items[0].querySelector('.tl-card'),as=items[1].querySelector('.tl-card'),con=tl.querySelector('.tl-connector');
+con.querySelector('svg').innerHTML='<path d="M19 12H5M11 6l-6 6 6 6"/>';
+var book=document.createElement('div');book.className='ob-book';
+book.innerHTML='<div class="ob-page ob-right"></div><div class="ob-leaf"><div class="ob-front">'+'<div class="ec-face"><div class="ec-frame"></div><div class="ec-seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2.5 9 2.5 12 0v-5"/><path d="M22 10v6"/></svg></div><div class="ec-k" data-i18n="ec-k">Education</div><div class="ec-t" data-i18n="ec-t">B.S. Computer &amp; Information Sciences</div><div class="ec-s">Summa Cum Laude · 3.96 GPA</div><div class="ec-u" data-i18n="ec-u">Harrisburg University · 2022</div></div>'+'</div><div class="ob-back"></div></div><div class="ob-spine"></div><div class="ob-shadow"></div>';
+book.querySelector('.ob-right').appendChild(as);book.querySelector('.ob-back').appendChild(bs);book.appendChild(con);
+tl.parentNode.replaceChild(book,tl);
+function fit(){as.style.height=bs.style.height='';var hh=Math.max(as.offsetHeight,bs.offsetHeight);book.querySelector('.ob-right').style.height=hh+'px';book.querySelector('.ob-leaf').style.height=hh+'px';as.style.height=bs.style.height=hh+'px'}
+fit();addEventListener('resize',fit);var tg=window.toggleLang;if(typeof tg==='function')window.toggleLang=function(){var r=tg.apply(this,arguments);fit();return r};
+if(reduce){book.classList.add('open');return}
+var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();setTimeout(function(){book.classList.add('open')},450)}},{threshold:.35});io.observe(book);
+})();
+</script>
+
 <script>
 (function(){Object.keys(CS).forEach(function(k){var f=CS[k].fn,o=window[f];if(typeof o!=='function')return;window[f]=function(){if(!csOpen(k))return o.apply(this,arguments)}})})();
 </script>
