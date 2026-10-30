@@ -95,7 +95,7 @@ html.menu-open,html.menu-open body{overflow:hidden!important;touch-action:none}
 .mobile-menu a{font-size:1.15rem;color:var(--text-gray-300);padding:.25rem 0}
 @media(max-width:1100px){.nav-links{display:none}.mobile-toggle{display:block;width:1.5rem;height:1.5rem}.mobile-toggle span{height:2px}}
 @media(max-width:768px){.nav-brand .bracket{font-size:1.4rem}.nav-brand .name{font-size:1rem}}
-@media(max-width:768px){.hero-role{font-size:clamp(.85rem,4.2vw,1.4rem)!important;white-space:nowrap}}
+@media(max-width:768px){.hero-role{font-size:clamp(.8rem,4.2vw,1.4rem)!important;white-space:nowrap}}
 .section{padding:6rem 1.5rem;scroll-margin-top:5rem;overflow-x:hidden}
 .section-inner{max-width:1100px;margin:0 auto}
 .section-header{display:flex;align-items:center;justify-content:center;gap:.75rem;margin-bottom:2rem;padding:1rem 0;position:relative;z-index:1}
@@ -113,13 +113,13 @@ html.menu-open,html.menu-open body{overflow:hidden!important;touch-action:none}
 .hero h1 .purple{color:var(--purple-400)}
 .hero .wave-emoji{font-size:.6em;display:inline-block;position:relative;top:-.19em;transform-origin:70% 75%;animation:wave 2.5s ease-in-out infinite}
 @keyframes wave{0%,100%{transform:rotate(0)}15%{transform:rotate(14deg)}30%{transform:rotate(-8deg)}45%{transform:rotate(14deg)}60%{transform:rotate(-4deg)}75%{transform:rotate(10deg)}}
-.hero-sub{margin-left:1rem;margin-top:.3rem}
+.hero-sub{margin-left:calc(5px + .75rem + 2.5px);margin-top:.3rem}
 .hero-role{font-family:'Inter',sans-serif;font-size:clamp(1.15rem,3vw,1.6rem);color:var(--text-gray-300)}
 .hero-role .typed{font-family:'JetBrains Mono',monospace;color:var(--purple-400)}
 .hero-role .cursor{color:var(--purple-400);animation:blink 1s step-end infinite}
 @keyframes blink{50%{opacity:0}}
-.hero-welcome{margin-top:.6rem;font-family:'Inter',sans-serif;font-size:clamp(1.05rem,2.2vw,1.3rem);font-weight:600;color:var(--text-gray-200);max-width:52rem}
-.hero-actions{display:flex;align-items:center;gap:1rem;margin-top:1.2rem;flex-wrap:wrap}
+.hero-welcome{margin-top:.6rem;font-family:'Inter',sans-serif;font-size:clamp(1.05rem,2.2vw,1.3rem);font-weight:600;color:var(--text-gray-300);max-width:52rem;letter-spacing:.005em}
+.hero-actions{display:flex;align-items:center;gap:1rem;margin-top:1.2rem;flex-wrap:wrap;padding-left:2px}
 .hero-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.8rem;border-radius:.5rem;font-size:.95rem;font-weight:600;text-decoration:none;transition:all .3s ease;font-family:'Inter',sans-serif;cursor:pointer;border:none}
 .hero-btn-primary{background:var(--purple-500);color:#04130d;box-shadow:0 4px 20px rgba(16,185,129,.3)}
 .hero-btn-primary:hover{background:var(--purple-600);box-shadow:0 6px 30px rgba(16,185,129,.45);transform:translateY(-2px)}
@@ -146,7 +146,7 @@ html.menu-open,html.menu-open body{overflow:hidden!important;touch-action:none}
 .desk-loader-bar{width:120px;height:3px;border-radius:2px;background:rgba(52,211,153,.15);overflow:hidden}
 .desk-loader-fill{height:100%;width:0%;border-radius:2px;background:linear-gradient(90deg,#10b981,#34d399);transition:width 30ms linear}
 .desk-loader.done{opacity:0;pointer-events:none;transition:opacity .4s ease}
-@media(max-width:768px){.hero{height:100svh;min-height:100svh}.hero-content{padding-top:6.5rem;padding-bottom:0;text-align:left}.hero-sub{margin-left:0}.desk-scene-wrap{min-height:200px;flex:1}.hero h1{font-size:2.2rem}.hero-role{font-size:clamp(1.1rem,4vw,1.4rem)}.hero-welcome{font-size:clamp(.88rem,3vw,.98rem)}.hero-welcome br{display:none}.desk-loader-pct{font-size:1.1rem}.desk-loader-label{font-size:.7rem}.desk-loader-bar{width:90px}}
+@media(max-width:768px){.hero{height:100svh;min-height:100svh}.hero-content{padding-top:6.5rem;padding-bottom:0;text-align:left}.hero-sub{margin-left:calc(5px + .75rem + 1.5px)}.desk-scene-wrap{min-height:200px;flex:1}.hero h1{font-size:2.2rem}.hero-role{font-size:clamp(1.1rem,4vw,1.4rem)}.hero-welcome{font-size:clamp(.88rem,3vw,.98rem)}.hero-welcome br{display:none}.desk-loader-pct{font-size:1.1rem}.desk-loader-label{font-size:.7rem}.desk-loader-bar{width:90px}}
 .about-bg{background:var(--bg-card);position:relative;z-index:1;overflow-x:hidden}
 .about-layout{display:grid;grid-template-columns:auto 1fr;gap:3rem;margin-top:3rem;align-items:start}
 @media(max-width:900px){.about-layout{grid-template-columns:1fr;justify-items:center}}
@@ -703,7 +703,7 @@ html.menu-open,html.menu-open body{overflow:hidden!important;touch-action:none}
 .work-item.expanded .work-more::after{transform:rotate(180deg)}
 
 /* Hero credential badges */
-.hero-badges{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.9rem}
+.hero-badges{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.9rem;padding-left:2px}
 .hero-badge{display:inline-flex;align-items:center;gap:.45rem;padding:.42rem .85rem;border-radius:999px;border:1px solid rgba(52,211,153,.3);background:rgba(52,211,153,.08);color:#d1fae5;font:600 .85rem 'Inter',sans-serif;letter-spacing:.01em;white-space:nowrap}
 .hero-badge .ic{width:.95rem;height:.95rem;color:#34d399}
 .hero-badge-key{border-color:rgba(52,211,153,.6);background:linear-gradient(135deg,rgba(52,211,153,.2),rgba(16,185,129,.08));color:#ecfdf5;box-shadow:0 0 18px rgba(52,211,153,.18)}
@@ -1403,6 +1403,11 @@ html.menu-open .nav-brand{position:relative;z-index:170}
 .ob-book .tl-connector{position:absolute;left:50%;bottom:-1.1rem;transform:translateX(-50%)!important;margin:0;z-index:7;opacity:0!important;transition:opacity .5s ease 1.35s!important}
 .ob-book.open .tl-connector{opacity:1!important}
 .ob-shadow{position:absolute;inset:auto 8% -22px 8%;height:30px;background:radial-gradient(ellipse at center,rgba(0,0,0,.6),transparent 70%);z-index:-1}
+
+/* Print: keep the resume to 2 pages like the PDF */
+@media print{html.printing #printZone .copy-btn{display:none!important}html.printing #printZone .resume-body{padding:0!important;line-height:1.34!important;font-size:10pt!important}html.printing #printZone .resume-body p,html.printing #printZone .resume-body li{font-size:10pt!important;margin-bottom:.12rem!important;line-height:1.34!important}html.printing #printZone .resume-body ul{margin-bottom:.3rem!important;padding-left:1.1rem!important}html.printing #printZone .resume-section-title{font-size:11pt!important;margin:.6rem 0 .3rem!important;padding-bottom:.1rem!important}html.printing #printZone .rs-head h1{font-size:18pt!important;margin-bottom:.1rem!important}html.printing #printZone .rs-head{margin-bottom:.2rem!important}html.printing #printZone .rs-head div{font-size:9.5pt!important}html.printing #printZone .resume-job-head{margin-top:.35rem!important}html.printing #printZone .resume-job-company{margin-bottom:.1rem!important;font-size:9.5pt!important}html.printing #printZone .resume-section,html.printing #printZone .resume-job{page-break-inside:auto!important}html.printing #printZone li{page-break-inside:avoid}html.printing #printZone .resume-modal,html.printing #printZone .resume-body{height:auto!important;max-height:none!important;overflow:visible!important;position:static!important;transform:none!important}html.printing #printZone .resume-job-head,html.printing #printZone .resume-job-company,html.printing #printZone .resume-section-title{page-break-after:avoid!important;break-after:avoid!important}}
+
+html[lang=am] .wave-emoji{margin-left:.22em}
 </style>
 <script type="application/ld+json">
 {
@@ -1466,7 +1471,7 @@ html.menu-open .nav-brand{position:relative;z-index:170}
   <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
   <symbol id="i-brain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 4.9 4 4.5 4.5 0 0 1 2.1 4 5 5 0 0 1-1 6.3 4.5 4.5 0 0 1-6 3.7V2"/><path d="M12 2a5 5 0 0 0-4.9 4 4.5 4.5 0 0 0-2.1 4 5 5 0 0 0 1 6.3 4.5 4.5 0 0 0 6 3.7V2"/><path d="M12 8v4m0 4v2"/><path d="M9 12h6"/></symbol>
   <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
-  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol><symbol id="i-smartphone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2.5"/><line x1="10.5" y1="18.5" x2="13.5" y2="18.5"/></symbol>
   <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
   <symbol id="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5,3 19,12 5,21"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
@@ -1513,8 +1518,8 @@ html.menu-open .nav-brand{position:relative;z-index:170}
 <div class="impact-grid">
 <div class="impact-card glass-card hover-glow card-hover fade-up"><svg class="ic"><use href="#i-shield"/></svg><div class="impact-num" data-target="12" data-suffix="">0</div><div class="impact-label" data-i18n="impact-l1">Projects Built</div></div>
 <div class="impact-card glass-card hover-glow card-hover fade-up"><svg class="ic"><use href="#i-terminal"/></svg><div class="impact-num" data-target="12" data-suffix="">0</div><div class="impact-label" data-i18n="impact-l2">Sigma Detection Rules</div></div>
-<div class="impact-card glass-card hover-glow card-hover fade-up"><svg class="ic"><use href="#i-phone"/></svg><div class="impact-num" data-target="1" data-suffix="">0</div><div class="impact-label" data-i18n="impact-l3">App in App Store Review</div></div>
-<div class="impact-card glass-card hover-glow card-hover fade-up"><svg class="ic"><use href="#i-code"/></svg><div class="impact-num" data-target="16" data-suffix="+">0</div><div class="impact-label" data-i18n="impact-l4">Technologies Mastered</div></div>
+<div class="impact-card glass-card hover-glow card-hover fade-up"><svg class="ic"><use href="#i-smartphone"/></svg><div class="impact-num" data-target="1" data-suffix="">0</div><div class="impact-label" data-i18n="impact-l3">Mobile App Built</div></div>
+<div class="impact-card glass-card hover-glow card-hover fade-up"><svg class="ic"><use href="#i-code"/></svg><div class="impact-num" data-target="16" data-suffix="+">0</div><div class="impact-label" data-i18n="impact-l4">Technologies Used</div></div>
 </div></div></section>
 
 <!-- WORK -->
@@ -1522,7 +1527,7 @@ html.menu-open .nav-brand{position:relative;z-index:170}
 <div class="work-item tilt-card fade-up wk-mobile-trim"><div class="work-number">01</div><div class="work-info"><h3 data-i18n="w5-title">IT Specialist (Tier II)</h3><div class="work-company">Defense Logistics Agency, DLA <svg class="ic"><use href="#i-extlink"/></svg></div><p class="work-desc"><span data-i18n="w5-desc">Tier II IT support for the Defense Logistics Agency in Philadelphia, PA — resolving incidents in a classified (Secret) environment, enforcing DoD endpoint-security and STIG compliance, and deploying policy-compliant workstations.</span></p><p class="work-ach-title" data-i18n="w5-ach">Key Responsibilities:</p><ul><li data-i18n="w5-li1"><span class="dot"></span><span><strong>Incident Response:</strong> Triage and resolve 130 hardware, VDI, and VPN incidents per month for DLA users in a classified (Secret) environment, documenting root cause, escalation, and resolution in ServiceNow</span></li><li data-i18n="w5-li2"><span class="dot"></span><span><strong>Endpoint Security &amp; Compliance:</strong> Enforce DoD endpoint-security and STIG policies and track user, device, and system compliance across the DLA workstation fleet, supporting audit readiness for security inspections</span></li><li data-i18n="w5-li3"><span class="dot"></span><span><strong>System Hardening &amp; Deployment:</strong> Reimage and deploy workstations via MECM/SCCM and Intune using standardized, policy-compliant builds, and remediate permission and credential issues on Windows and Linux</span></li><li data-i18n="w5-li4"><span class="dot"></span><span><strong>Documentation:</strong> Author SOPs and knowledge-based articles for standard support and security procedures, reducing repeat incidents and accelerating new-technician onboarding</span></li></ul><div class="work-tags"><span class="work-tag">Incident Response</span><span class="work-tag">ServiceNow</span><span class="work-tag">STIG Compliance</span><span class="work-tag">Endpoint Security</span><span class="work-tag">MECM/SCCM</span><span class="work-tag">Intune</span><span class="work-tag">VDI / VPN</span><span class="work-tag">Windows</span><span class="work-tag">Linux</span><span class="work-tag">DLA</span></div><button type="button" class="work-more" aria-expanded="false" onclick="toggleWork(this)"></button></div><div class="work-meta-right"><div class="work-year">June 2026 — Present</div><div class="work-type-badge" data-i18n="w5-type">Full-time</div></div></div>
 <div class="work-item tilt-card fade-up wk-trim"><div class="work-number">02</div><div class="work-info"><h3 data-i18n="w1-title">Technology Analyst</h3><div class="work-company">Independence Blue Cross, IBX <svg class="ic"><use href="#i-extlink"/></svg></div><p class="work-desc"><span data-i18n="w1-desc">Provide technical support to end-users by troubleshooting hardware, software, and network issues across Windows and MacOS environments in a regulated healthcare enterprise.</span></p><p class="work-ach-title" data-i18n="w1-ach">Key Responsibilities:</p><ul><li data-i18n="w1-li1"><span class="dot"></span>Resolve 15-30 IT requests and incidents daily via ServiceNow leveraging ITIL best practices to support 1,500+ employees</li><li data-i18n="w1-li0"><span class="dot"></span>Trained and mentored new hires on IT Support processes, troubleshooting, and customer service best practices</li><li data-i18n="w1-li2"><span class="dot"></span>Configure and troubleshoot mobile devices, Citrix, VMware, and virtual desktop environments</li><li data-i18n="w1-li3"><span class="dot"></span>Deliver clear, customer-focused communication to diagnose issues and provide tailored resolutions</li><li data-i18n="w1-li4"><span class="dot"></span>Continuously develop technical skills to adapt to evolving IT systems</li></ul><div class="work-tags"><span class="work-tag">ServiceNow</span><span class="work-tag">ITIL</span><span class="work-tag">Windows</span><span class="work-tag">MacOS</span><span class="work-tag">Citrix</span><span class="work-tag">VMware</span><span class="work-tag">Active Directory</span><span class="work-tag">Linux</span></div><button type="button" class="work-more" aria-expanded="false" onclick="toggleWork(this)"></button></div><div class="work-meta-right"><div class="work-year">Nov 2024 — Nov 2025</div><div class="work-type-badge" data-i18n="w1-type">Full-time</div></div></div>
 <div class="work-item tilt-card fade-up wk-compact"><div class="work-number">03</div><div class="work-info"><h3 data-i18n="w3-title">IT Support Intern</h3><div class="work-company">Harrisburg University of Science and Technology <svg class="ic"><use href="#i-extlink"/></svg></div><p class="work-desc"><span data-i18n="w3-desc">Provided technical support across the university, resolving hardware, software, and network issues while managing Active Directory accounts.</span></p><p class="work-ach-title" data-i18n="w-key-ach">Key Achievements:</p><ul><li data-i18n="w3-li1"><span class="dot"></span>Reduced incident resolution time by 35% through proactive troubleshooting and process improvements</li><li data-i18n="w3-li2"><span class="dot"></span>Resolved 95% of hardware/software/network issues on first contact</li><li data-i18n="w3-li3"><span class="dot"></span>Managed Active Directory accounts, improving provisioning efficiency by 25%</li></ul><div class="work-tags"><span class="work-tag">Active Directory</span><span class="work-tag">ServiceNow</span><span class="work-tag">Windows</span><span class="work-tag">Linux</span></div><button type="button" class="work-more" aria-expanded="false" onclick="toggleWork(this)"></button></div><div class="work-meta-right"><div class="work-year">Jan 2022 — May 2022</div><div class="work-type-badge" data-i18n="w3-type">Internship</div></div></div>
-<div class="work-item tilt-card fade-up wk-compact"><div class="work-number">04</div><div class="work-info"><h3 data-i18n="w4-title">UAT Software Tester</h3><div class="work-company">Randstad Technologies <svg class="ic"><use href="#i-extlink"/></svg></div><p class="work-desc"><span data-i18n="w4-desc">Created and executed user acceptance test (UAT) scripts for loan and home assistance programs, collaborating with development teams to ensure software quality.</span></p><p class="work-ach-title" data-i18n="w4-ach">Key Achievements:</p><ul><li data-i18n="w4-li1"><span class="dot"></span>Created and executed user acceptance test (UAT) scripts for loan and home assistance programs</li><li data-i18n="w4-li2"><span class="dot"></span>Collaborated with the development team to identify, document, and resolve software defects</li><li data-i18n="w4-li3"><span class="dot"></span>Utilized Agile methodologies to ensure timely delivery of test results and feedback</li><li data-i18n="w4-li4"><span class="dot"></span>Gained practical experience in SDLC and STLC processes, improving test case accuracy and quality</li></ul><div class="work-tags"><span class="work-tag">UAT</span><span class="work-tag">Agile</span><span class="work-tag">SDLC</span><span class="work-tag">STLC</span><span class="work-tag">Test Scripts</span></div><button type="button" class="work-more" aria-expanded="false" onclick="toggleWork(this)"></button></div><div class="work-meta-right"><div class="work-year">Mar 2016 — Oct 2016</div><div class="work-type-badge" data-i18n="w4-type">Contract</div></div></div>
+<div class="work-item tilt-card fade-up wk-compact"><div class="work-number">04</div><div class="work-info"><h3 data-i18n="w4-title">UAT Software Tester</h3><div class="work-company">Randstad Technologies <svg class="ic"><use href="#i-extlink"/></svg></div><p class="work-desc"><span data-i18n="w4-desc">Created and executed user acceptance test (UAT) scripts for loan and home assistance programs, collaborating with development teams to ensure software quality.</span></p><p class="work-ach-title" data-i18n="w4-ach">Key Achievements:</p><ul><li data-i18n="w4-li1"><span class="dot"></span>Wrote and executed detailed UAT test cases, documenting steps, expected results and pass/fail outcomes for each release</li><li data-i18n="w4-li2"><span class="dot"></span>Collaborated with the development team to identify, document, and resolve software defects</li><li data-i18n="w4-li3"><span class="dot"></span>Utilized Agile methodologies to ensure timely delivery of test results and feedback</li><li data-i18n="w4-li4"><span class="dot"></span>Gained practical experience in SDLC and STLC processes, improving test case accuracy and quality</li></ul><div class="work-tags"><span class="work-tag">UAT</span><span class="work-tag">Agile</span><span class="work-tag">SDLC</span><span class="work-tag">STLC</span><span class="work-tag">Test Scripts</span></div><button type="button" class="work-more" aria-expanded="false" onclick="toggleWork(this)"></button></div><div class="work-meta-right"><div class="work-year">Mar 2016 — Oct 2016</div><div class="work-type-badge" data-i18n="w4-type">Contract</div></div></div>
 
 </div></div></section>
 
@@ -4994,7 +4999,7 @@ var amRoles=["የአይቲ ስፔሻሊስት","የሳይበር ደህንነት 
 var enRoles=["IT Specialist","Cybersecurity Professional","AI Enthusiast","Web Developer","Problem Solver","Critical Thinker","Computer Enthusiast"];
 var am={
 "nav-about":"ስለ እኔ","nav-edu":"ትምህርት","nav-work":"ስራ","nav-cert":"ሰርቲፊኬቶች","nav-skills":"ክህሎቶች","nav-projects":"ፕሮጀክቶች","nav-test":"ምስክርነቶች","nav-contact":"ያግኙን",
-"hero-hi":"ሰላም፣ እኔ","hero-name":"ብሩክ","hero-neny":"ነኝ","hero-im":"እኔ","hero-welcome":"የሳይበር ደህንነት · ክላውድ · AI — ስለ ቴክኖሎጂ እና ችግር መፍታት ቅንዓት","hero-connect":"እንገናኝ","hero-resume":"ሬዝዩሜ ይመልከቱ",
+"hero-hi":"ሰላም፣ እኔ","hero-name":"ብሩክ","hero-neny":"ነኝ","hero-im":"እኔ","hero-welcome":"የሳይበር ደህንነት · ክላውድ · AI — ለቴክኖሎጂ እና ለችግር መፍታት ትልቅ ፍቅር አለኝ።","hero-connect":"እንገናኝ","hero-resume":"ሬዝዩሜ ይመልከቱ",
 "badge":"ለዕድሎች ክፍት",
 "about-title":"ስለ እኔ",
 "about-p1":"ከኢትዮጵያ ወደ አሜሪካ የመጣሁት በትጋት እና በእምነት ላይ የተመሰረተ ህልም ይዤ ነው። ጉዞዬ ከትህትና ጅማሬ ነው፣ ታክሲ እየነዳሁ በማታ ደግሞ ሳጠና እና በትምህርት እና ቴክኖሎጂ አዲስ ህይወት እገነባ ነበር።",
@@ -5005,7 +5010,7 @@ var am={
 "hl-bs-t":"ቢ.ኤስ. ኮምፒውተር ሳይንስ","hl-bs-p":"Summa Cum Laude — GPA 3.96 ከሃሪስበርግ ዩኒቨርሲቲ",
 "hl-loc-t":"ፊላዴልፊያ፣ ፒ.ኤ.","hl-loc-p":"ለርቀት እና በቦታ ስራ ዝግጁ",
 "impact-title":"ተጽዕኖ እና አቅም","impact-sub":"በሳይበር ደህንነት መፍትሄዎች ግንባታ እና ትግበራ ላይ ያተኮረ ቴክኒካል ልምድ",
-"impact-l1":"የተገነቡ ፕሮጀክቶች","impact-l2":"የSigma ማወቂያ ደንቦች","impact-l3":"በApp Store ግምገማ ላይ ያለ መተግበሪያ","impact-l4":"የተካኑ ቴክኖሎጂዎች",
+"impact-l1":"የተገነቡ ፕሮጀክቶች","impact-l2":"የSigma ማወቂያ ደንቦች","impact-l3":"የተገነባ ሞባይል መተግበሪያ","impact-l4":"ጥቅም ላይ የዋሉ ቴክኖሎጂዎች",
 "edu-title":"ትምህርት",
 "edu-bs-t":"የሳይንስ ባችለር በኮምፒውተር እና ኢንፎርሜሽን ሳይንስ",
 "edu-as-t":"የተግባራዊ ሳይንስ አሶሺየት — ኮምፒውተር እና ኢንፎርሜሽን ሲስተምስ",
@@ -5024,7 +5029,7 @@ var am={
 "w3-title":"የአይቲ ድጋፍ ተለማማጅ","w3-type":"ተለማማጅ",
 "w3-desc":"በዩኒቨርሲቲ ውስጥ Active Directory መለያዎችን ሲያስተዳድሩ ሃርድዌር፣ ሶፍትዌር እና ኔትወርክ ችግሮችን በመፍታት ቴክኒካል ድጋፍ መስጠት።",
 "w3-ach":"ዋና ስኬቶች፡","w3-li1":"በንቁ ችግር መፍታት እና ሂደት ማሻሻል የክስተት ፍቺ ጊዜን በ35% መቀነስ","w3-li2":"95% የሃርድዌር/ሶፍትዌር/ኔትወርክ ችግሮችን በመጀመሪያ ግንኙነት መፍታት","w3-li3":"Active Directory መለያዎችን ማስተዳደር፣ የአቅርቦት ቅልጥፍናን በ25% ማሻሻል",
-"w4-title":"የUAT ሶፍትዌር ሞካሪ","w4-type":"ኮንትራት","w4-desc":"ለብድር እና ለቤት ድጋፍ ፕሮግራሞች የተጠቃሚ ተቀባይነት ፈተና (UAT) ስክሪፕቶችን መፍጠር እና ማስፈጸም፣ የሶፍትዌር ጥራትን ለማረጋገጥ ከልማት ቡድኖች ጋር መተባበር።","w4-ach":"ዋና ስኬቶች፡","w4-li1":"ለብድር እና ለቤት ድጋፍ ፕሮግራሞች የተጠቃሚ ተቀባይነት ፈተና (UAT) ስክሪፕቶችን መፍጠር እና ማስፈጸም","w4-li2":"የሶፍትዌር ጉድለቶችን ለመለየት፣ ለመመዝገብ እና ለመፍታት ከልማት ቡድኑ ጋር መተባበር","w4-li3":"የፈተና ውጤቶችን እና አስተያየቶችን ወቅታዊ ማድረስ ለማረጋገጥ Agile ዘዴዎችን መጠቀም","w4-li4":"በSDLC እና STLC ሂደቶች ተግባራዊ ልምድ ማግኘት፣ የፈተና ጉዳይ ትክክለኛነትን እና ጥራትን ማሻሻል",
+"w4-title":"የUAT ሶፍትዌር ሞካሪ","w4-type":"ኮንትራት","w4-desc":"ለብድር እና ለቤት ድጋፍ ፕሮግራሞች የተጠቃሚ ተቀባይነት ፈተና (UAT) ስክሪፕቶችን መፍጠር እና ማስፈጸም፣ የሶፍትዌር ጥራትን ለማረጋገጥ ከልማት ቡድኖች ጋር መተባበር።","w4-ach":"ዋና ስኬቶች፡","w4-li1":"ዝርዝር የUAT ፈተና ጉዳዮችን በመጻፍ እና በማስፈጸም፣ ለእያንዳንዱ ልቀት ደረጃዎችን፣ የሚጠበቁ ውጤቶችን እና ያለፈ/ያልተሳካ ውጤቶችን መመዝገብ","w4-li2":"የሶፍትዌር ጉድለቶችን ለመለየት፣ ለመመዝገብ እና ለመፍታት ከልማት ቡድኑ ጋር መተባበር","w4-li3":"የፈተና ውጤቶችን እና አስተያየቶችን ወቅታዊ ማድረስ ለማረጋገጥ Agile ዘዴዎችን መጠቀም","w4-li4":"በSDLC እና STLC ሂደቶች ተግባራዊ ልምድ ማግኘት፣ የፈተና ጉዳይ ትክክለኛነትን እና ጥራትን ማሻሻል",
 "cert-title":"ሰርቲፊኬቶች እና ሽልማቶች",
 "cert1-desc":"በድርጅት አካባቢዎች ስጋት ማወቅ፣ ስጋት አስተዳደር፣ ክስተት ምላሽ እና የደህንነት ስራዎችን ጨምሮ ዋና የሳይበር ደህንነት ክህሎቶችን የሚያረጋግጥ በኢንዱስትሪ እውቅና ያለው ሰርቲፊኬት።",
 "cert2-desc":"በAmazon Web Services ክላውድ መሰረተ ልማት ላይ ስርጭት ያላቸው ስርዓቶችን፣ ወጪ-ተመጣጣኝ አርክቴክቸሮችን እና ጠንካራ መተግበሪያዎችን በመንደፍ ልምድ የሚያሳይ ሙያዊ ሰርቲፊኬት።",
@@ -6223,20 +6228,20 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){var ov=docu
         '@page{size:letter;margin:.5in}'+
         '*{box-sizing:border-box}'+
         'html,body{margin:0;padding:0;background:#fff;color:#000}'+
-        'body{padding:.75rem;font-family:-apple-system,system-ui,"Segoe UI",Roboto,sans-serif;line-height:1.5;font-size:11pt}'+
+        'body{padding:0;font-family:-apple-system,system-ui,"Segoe UI",Roboto,sans-serif;line-height:1.34;font-size:10pt}'+'p,li{font-size:10pt;margin:0 0 .12rem}'+'.copy-btn{display:none!important}'+'.rs-center{text-align:center}'+'.rs-head h1{font-size:18pt;margin:0 0 .1rem;text-transform:uppercase}'+'.rs-head div{font-size:9.5pt}'+
         'body *{color:#000!important;background:transparent!important;box-shadow:none!important;text-shadow:none!important;max-width:100%}'+
         'a{color:#0066cc!important;text-decoration:underline;word-break:break-word}'+
-        'h1,h2,h3,h4{margin:1rem 0 .3rem;page-break-after:avoid}'+
-        'ul{margin:.25rem 0 .6rem 1.25rem;padding:0}'+
-        'li{margin:.15rem 0}'+
-        '.resume-section-title{font-size:1.05rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #000;padding-bottom:.2rem;margin:1.2rem 0 .5rem}'+
-        '.resume-job-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;margin-top:.6rem;gap:.5rem}'+
+        'h1,h2,h3,h4{margin:.6rem 0 .2rem;page-break-after:avoid}'+
+        'ul{margin:.1rem 0 .3rem 1.1rem;padding:0}'+
+        'li{margin:0 0 .12rem}'+
+        '.resume-section-title{font-size:11pt;font-weight:700;border-bottom:1px solid #000;padding-bottom:.1rem;margin:.6rem 0 .3rem;page-break-after:avoid}'+
+        '.resume-job-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;margin-top:.35rem;gap:.5rem;page-break-after:avoid}'+
         '.resume-job-title{font-weight:700}'+
         '.resume-job-date{font-size:.9rem}'+
-        '.resume-job-company{font-style:italic;margin-bottom:.25rem;font-size:.95rem}'+
+        '.resume-job-company{margin-bottom:.1rem;font-size:9.5pt;page-break-after:avoid}'+
         '.resume-project-title{font-weight:700;margin-top:.6rem}'+
         '.resume-project-link{display:inline-block;margin-top:.15rem;font-size:.9rem}'+
-        '.resume-section,.resume-job{page-break-inside:avoid}'+
+        'li{page-break-inside:avoid}'+
         '.resume-page-break{display:none}'+
         '</style></head><body>'+clone.innerHTML+'</body></html>';
       // Create hidden iframe (off-screen but not display:none — some browsers won't print display:none iframes)
