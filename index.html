@@ -4102,7 +4102,7 @@ html,body{height:100%;width:100%;overflow:hidden;background:var(--bg);color:var(
 .node-info .tradeoff-label{font-size:.65rem;color:var(--amber);text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:.35rem;font-family:'JetBrains Mono',monospace}
 .node-info .tradeoff p{color:var(--text);font-size:.8rem;margin-bottom:0;line-height:1.55}
 
-pre.code{background:#05080f;border:1px solid rgba(0,229,255,.15);border-radius:6px;padding:.85rem 1rem;overflow-x:auto;font-family:'JetBrains Mono','Courier New',monospace;font-size:.72rem;line-height:1.55;color:#c0d0e0;margin-top:.5rem}
+pre.code{background:#05080f;border:1px solid rgba(0,229,255,.15);border-radius:6px;padding:.85rem 1rem;overflow-x:auto;font-family:'JetBrains Mono','Courier New',monospace;font-size:.82rem;line-height:1.6;color:#d4e2f0;margin-top:.5rem}
 pre.code::-webkit-scrollbar{height:4px}
 pre.code::-webkit-scrollbar-thumb{background:rgba(0,229,255,.3)}
 .kw{color:#ff79c6}
@@ -4316,13 +4316,14 @@ pre.code::-webkit-scrollbar-thumb{background:rgba(0,229,255,.3)}
 <script>
 // Syntax highlighter — minimal HCL
 function hl(s){
-  return s
-    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-    .replace(/(#[^\n]*)/g,'<span class="com">$1</span>')
-    .replace(/("[^"]*")/g,'<span class="str">$1</span>')
-    .replace(/\b(resource|data|variable|output|module|locals|provider|terraform)\b/g,'<span class="kw">$1</span>')
-    .replace(/\b(true|false|null)\b/g,'<span class="num">$1</span>')
-    .replace(/\b(\d+)\b/g,'<span class="num">$1</span>');
+  s=s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  return s.replace(/(#[^\n]*)|("[^"]*")|\b(resource|data|variable|output|module|locals|provider|terraform)\b|\b(true|false|null|\d+)\b/g,function(m,com,str,kw,num){
+    if(com)return '<span class="com">'+com+'</span>';
+    if(str)return '<span class="str">'+str+'</span>';
+    if(kw)return '<span class="kw">'+kw+'</span>';
+    if(num)return '<span class="num">'+num+'</span>';
+    return m;
+  });
 }
 
 const NODES = {
