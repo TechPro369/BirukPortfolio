@@ -399,7 +399,7 @@ html.menu-open,html.menu-open body{overflow:hidden!important;touch-action:none}
 .cw-close:hover{background:rgba(255,255,255,.1);transform:rotate(90deg)}
 .cw-scroll{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:0 clamp(1rem,4vw,3rem);-webkit-overflow-scrolling:touch}
 .cw-hint{text-align:center;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--text-gray-500);padding:1.4rem 0 .4rem;letter-spacing:.08em}
-.cw-stack{max-width:700px;margin:0 auto;padding-bottom:2rem;display:flex;flex-direction:column;gap:15vh}
+.cw-stack{max-width:700px;margin:0 auto;padding-bottom:max(2rem,calc(114vh - 820px));display:flex;flex-direction:column;gap:15vh}
 .cw-card{position:sticky;top:calc(1.25rem + var(--i)*34px);display:flex;align-items:center;gap:2.25rem;min-height:min(40vh,300px);margin:0;padding:2rem 2.25rem;border-radius:1.4rem;background:linear-gradient(160deg,#17171d,#0e0e13);border:1px solid rgba(255,255,255,.08);box-shadow:0 -10px 40px rgba(0,0,0,.45);overflow:hidden;transform-origin:50% 0;will-change:transform;opacity:0;translate:0 60px}
 .cw-overlay.open .cw-card{animation:cwIn .7s cubic-bezier(.22,.61,.36,1) forwards;animation-delay:calc(var(--i)*90ms + .1s)}
 @keyframes cwIn{to{opacity:1;translate:0 0}}
