@@ -1,0 +1,8 @@
+# Security policy for birukaregu.com
+# Found a security issue with this site? I'd genuinely like to hear about it.
+# Responsible disclosure is welcome and appreciated.
+
+Contact: mailto:aregubq@gmail.com
+Expires: 2027-11-06T00:00:00.000Z
+Preferred-Languages: en, am
+Canonical: https://www.birukaregu.com/.well-known/security.txt
