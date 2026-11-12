@@ -4902,7 +4902,8 @@ if(document.readyState==='complete')init();else window.addEventListener('load',i
 })();
 
 // Hero content floats gently as the page scrolls
-(function(){var hc=document.querySelector('.hero-content'),hero=document.getElementById('hero');if(!hc||!hero)return;var tk=false;
+(function(){var hc=document.querySelector('.hero-content'),hero=document.getElementById('hero');if(!hc||!hero)return;
+if(window.matchMedia('(hover:none) and (pointer:coarse)').matches)return;var tk=false;
 function upd(){tk=false;var y=window.scrollY||window.pageYOffset,h=hero.offsetHeight||window.innerHeight;if(y>h*1.1)return;var p=Math.min(Math.max(y/h,0),1);
 hc.style.transform=y>0?'translate3d(0,'+(y*.22).toFixed(1)+'px,0)':'';hc.style.opacity=(1-p*.6).toFixed(3)}
 window.addEventListener('scroll',function(){if(!tk){tk=true;requestAnimationFrame(upd)}},{passive:true});upd();})();
