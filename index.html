@@ -734,6 +734,8 @@ html.lenis,html.lenis body{height:auto}
 .hero-accent{animation-delay:.1s}.hero-role{animation-delay:.22s}.hero-badges{animation-delay:.34s}.hero-welcome{animation-delay:.46s}.hero-actions{animation-delay:.58s}.hero-socials{animation-delay:.7s}
 @keyframes heroFloatIn{to{opacity:1;transform:none}}
 .hero-content{will-change:transform,opacity}
+@keyframes heroPara{from{transform:translate3d(0,0,0);opacity:1}to{transform:translate3d(0,22svh,0);opacity:.4}}
+@media(hover:none) and (pointer:coarse){@supports (animation-timeline:scroll()){.hero-content{animation:heroPara linear both;animation-timeline:scroll(root block);animation-range:0 100svh}}.hero-btn-outline{backdrop-filter:none;-webkit-backdrop-filter:none}}
 
 @media(max-width:768px){.hero-badges{gap:.45rem}.hero-badge{font-size:.76rem;padding:.35rem .7rem}}
 
@@ -4901,7 +4903,7 @@ if(document.readyState==='complete')init();else window.addEventListener('load',i
 })();
 
 // Hero content floats gently as the page scrolls
-(function(){var hc=document.querySelector('.hero-content'),hero=document.getElementById('hero');if(!hc||!hero)return;var tk=false;
+(function(){var hc=document.querySelector('.hero-content'),hero=document.getElementById('hero');if(!hc||!hero)return;if(matchMedia('(hover:none) and (pointer:coarse)').matches&&window.CSS&&CSS.supports('animation-timeline','scroll()'))return;var tk=false;
 function upd(){tk=false;var y=window.scrollY||window.pageYOffset,h=hero.offsetHeight||window.innerHeight;if(y>h*1.1)return;var p=Math.min(Math.max(y/h,0),1);
 hc.style.transform=y>0?'translate3d(0,'+(y*.22).toFixed(1)+'px,0)':'';hc.style.opacity=(1-p*.6).toFixed(3)}
 window.addEventListener('scroll',function(){if(!tk){tk=true;requestAnimationFrame(upd)}},{passive:true});upd();})();
