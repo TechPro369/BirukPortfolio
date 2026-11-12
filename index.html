@@ -146,7 +146,7 @@ html.menu-open,html.menu-open body{overflow:hidden!important;touch-action:none}
 .hero-social-link.instagram:hover{color:#ff5e96}
 .desk-scene-wrap{position:relative;z-index:3;width:100%;max-width:100vw;flex:1;min-height:0;margin-top:-1rem;overflow:visible;pointer-events:none}
 .desk-scene-wrap::after{content:'';position:absolute;bottom:0;left:10%;right:10%;height:40%;background:radial-gradient(ellipse at 50% 100%,rgba(16,185,129,.08) 0%,transparent 70%);pointer-events:none;z-index:4}
-.desk-scene-wrap canvas{display:block;width:100%!important;height:100%!important;pointer-events:none}
+.desk-scene-wrap canvas{display:block;width:100%!important;height:100%!important;pointer-events:none;transform:translateZ(0)}
 .desk-loader{position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;background:transparent}
 .desk-loader-label{font-family:'Inter',sans-serif;font-size:.8rem;font-weight:600;color:#34d399;letter-spacing:.05em}
 .desk-loader-pct{font-family:'JetBrains Mono',monospace;font-size:1.4rem;font-weight:700;color:#34d399;text-shadow:0 0 20px rgba(52,211,153,.4)}
@@ -4891,6 +4891,7 @@ setTimeout(function(){card.classList.add('hidden')},400);
 (function(){
 function canScroll(n){for(var e=n;e&&e!==document.body&&e!==document.documentElement;e=e.parentElement){var o=getComputedStyle(e).overflowY;if((o==='auto'||o==='scroll')&&e.scrollHeight>e.clientHeight+1)return true}return false}
 function init(){if(typeof Lenis==='undefined'||window.lenis)return;
+ if(window.matchMedia('(hover:none) and (pointer:coarse)').matches)return;
  var l=new Lenis({duration:1.15,easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t))},smoothWheel:true,wheelMultiplier:1,touchMultiplier:1.5,prevent:function(n){return canScroll(n)}});
  window.lenis=l;
  function raf(t){var lock=document.body.style.overflow==='hidden'||document.documentElement.style.overflow==='hidden';if(lock&&!l.isStopped)l.stop();else if(!lock&&l.isStopped)l.start();l.raf(t);requestAnimationFrame(raf)}
@@ -5171,8 +5172,8 @@ var sc=new THREE.Scene();sc.fog=new THREE.Fog(0x020a06,30,60);
 var isMob=w<769;
 if(isMob){sc.fog=new THREE.Fog(0x0e0e13,12.5,19)}
 var cam=new THREE.PerspectiveCamera(32,w/h,.1,100);cam.position.set(0,3.8,10.5);cam.lookAt(0,isMob?-.95:-.5,0);
-var ren=new THREE.WebGLRenderer({antialias:true,alpha:true});ren.setClearColor(0x000000,0);ren.setSize(w,h);ren.setPixelRatio(Math.min(window.devicePixelRatio,isMob?1.5:3));
-ren.shadowMap.enabled=true;ren.shadowMap.type=isMob?THREE.PCFShadowMap:THREE.PCFSoftShadowMap;
+var ren=new THREE.WebGLRenderer({antialias:true,alpha:true});ren.setClearColor(0x000000,0);ren.setSize(w,h);ren.setPixelRatio(Math.min(window.devicePixelRatio,isMob?1:3));
+ren.shadowMap.enabled=!isMob;ren.shadowMap.type=isMob?THREE.PCFShadowMap:THREE.PCFSoftShadowMap;
 ren.toneMapping=THREE.NoToneMapping;ren.toneMappingExposure=1.0;
 ct.appendChild(ren.domElement);
 ren.domElement.style.opacity='0';
