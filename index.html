@@ -157,14 +157,15 @@ html.menu-open,html.menu-open body{overflow:hidden!important;touch-action:none}
 .about-bg{background:var(--bg-card);position:relative;z-index:1;overflow-x:hidden}
 .about-layout{display:grid;grid-template-columns:auto 1fr;gap:3rem;margin-top:3rem;align-items:start}
 @media(max-width:900px){.about-layout{grid-template-columns:1fr;justify-items:center}}
-.profile-wrap{position:relative;flex-shrink:0}
+.profile-wrap{position:relative;flex-shrink:0;margin-bottom:.9rem}
+.profile-badge{padding:.28rem .7rem!important;gap:.32rem!important}.profile-badge span{font-size:.66rem!important}.profile-badge .dot-live{width:6px!important;height:6px!important}
 .profile-frame{position:relative;width:280px;height:280px;border-radius:50%;overflow:hidden;z-index:1;animation:profileFloat 4s ease-in-out infinite;transition:filter .4s ease,box-shadow .4s ease}
 .profile-frame:hover{animation-play-state:paused;box-shadow:0 0 24px rgba(52,211,153,.22),0 0 48px rgba(52,211,153,.08)}
 @keyframes profileFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 .profile-frame img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform .6s cubic-bezier(.25,.46,.45,.94)}
 .profile-wrap:hover .profile-frame img{transform:scale(1.05)}
 
-.profile-badge{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);z-index:3;background:rgba(10,10,14,.85);backdrop-filter:blur(10px);border:1px solid rgba(52,211,153,.3);border-radius:99px;padding:.4rem 1rem;display:flex;align-items:center;gap:.4rem;white-space:nowrap}
+.profile-badge{position:absolute;bottom:-.85rem;left:50%;transform:translateX(-50%);z-index:3;background:rgba(10,10,14,.85);backdrop-filter:blur(10px);border:1px solid rgba(52,211,153,.3);border-radius:99px;padding:.4rem 1rem;display:flex;align-items:center;gap:.4rem;white-space:nowrap}
 .profile-badge .dot-live{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 8px rgba(34,197,94,.5);animation:pulse-live 2s ease-in-out infinite}
 @keyframes pulse-live{0%,100%{box-shadow:0 0 4px rgba(34,197,94,.4)}50%{box-shadow:0 0 12px rgba(34,197,94,.7)}}
 .profile-badge span{font-size:.75rem;color:var(--text-gray-300);font-weight:500}
